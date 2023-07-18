@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"CSS Button generator"
+})
+
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html',{})
+    <main class="main">
+      <section class="basic">
+        <div class="settings__main-color section">
+          <h3 class="main__color-title h3-title">Background color</h3>
+          <div class="color__pick main__color-bg settings-block">
+            <div class="input__color">
+              <input type="color" id="color__pick" value="#bfbfbf">
+            </div>
+            <div class="input__text">
+              <input type="text" id="bg__input" value="#bfbfbf">
+            </div>
+          </div>
+          <div class="hover-chekbox">
+            <input type="checkbox" class="hover__toggle" id="hover__toggle">
+            <label for="hover__toggle" class="checkbox-theme">:hover</label>
+            <button class="hover__menu">Hover menu</button>
+          </div>
+        </div>
+        <div class="settings__text section">
+          <div class="text settings-block">
+            <h4 class="h4-title">Button text</h4>
+            <input type="text" class="settings__text-input" placeholder="Text">
+          </div>
+          <div class="text__fontfamily settings-block">
+            <h4 class="h4-title">font-family:</h4>
+            <select name="fonts" id="fontfamily">
+              <option value="Arial">Arial</option>
+              <option value="Arial Rounded MT Bold">Rounded</option>
+              <option value="Forte">Forte</option>
+            </select>
+          </div>
+          <div class="text__fontweight settings-block">
+            <h4 class="h4-title">font-weight:</h4>
+            <select name="weight" id="fontweight">
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+              <option value="700">700</option>
+              <option value="800">800</option>
+              <option value="900">900</option>
+            </select>
+          </div>
+          <div class="text__fontsize settings-block">
+            <h4 class="h4-title">font-size:</h4>
+            <input type="number" class="text__fontsize-input" value="15" placeholder="15">
+          </div>
+          <div class="text__color settings-block">
+            <h4 class="h4-title">color:</h4>
+            <div class="input__text">
+              <input type="text" class="text__color-output" value="#bfbfbf">
+            </div>
+            <div class="input__color">
+              <input type="color" class="text__color-input">
+            </div>
+          </div>
+        </div>
+        <div class="button section">
+          <h3 class="h3-title">Button color</h3>
+          <div class="button__color  settings-block">
+            <div class="input__color">
+              <input type="color" id="button__color" value="#f20000">
+            </div>
+            <div class="input__text">
+              <input type="text" class="button__color-output" value="#f20000">
+            </div>
+          </div>
+          <div class="button__color-transparent">
+            <input type="checkbox" id="transparent" class="transparent">
+            <label for="transparent" class="checkbox-theme">transparent</label>
+          </div>
+        </div>
+        <div class="settings__main-width section">
+          <h3 class="h3-title">Parameters</h3>
+          <div class="parameters settings-block">
+            <h4 class="width__title">Width:</h4>
+            <input type="number" id="settings__width-input" value="120">
+          </div>
+          <div class="parameters settings-block">
+            <h4 class="width__title">Height:</h4>
+            <input type="number" id="settings__height-input" value="60">
+          </div>
+        </div>
+      </section>
+
+    </main>
+    @@include('html/footer.html',{})
+  </div>
+
+
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>

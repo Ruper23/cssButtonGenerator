@@ -1,0 +1,26 @@
+.header {
+  border-bottom: solid 1px #707070;
+}
+
+
+
+.header__wrap {
+  display: flex;
+  margin: 50px 0;
+  align-items: center;
+  padding-inline: 25px;
+}
+
+.link:hover > svg > path {
+  fill: #ae2323;
+}
+
+.header__title {
+  text-align: center;
+  margin-inline: auto;
+}
+h1{
+  font-family: Ubuntu;
+  font-size: 3rem;
+  font-weight: 900;
+}
