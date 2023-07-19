@@ -1,0 +1,87 @@
+
+.hover-section {
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	width: 300px;
+	display: none;
+	flex-direction: column;
+	background-color: inherit;
+}
+.hover-section.active {
+	display: flex;
+}
+.parameters {
+	display: flex;
+	/* justify-content: space-around; */
+}
+.parameter {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.hover-df {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.transform__settings {
+	display: flex;
+	gap: 15px;
+}
+.checkbox-label {
+	color: #000;
+}
+
+.hover-class {
+	display: none;
+	flex-direction: column;
+}
+.disabled {
+	display: none;
+}
+
+.hover-close {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	transform: rotate(45deg);
+	border-radius: 50%;
+	border: 1px solid #000;
+	background: #bfbfbf;
+	font-size: 24px;
+	line-height: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 4px 0px #000, 0 0 2px 1px #fff inset;
+}
+.hover__menu {
+	width: 100px;
+	height: 30px;
+	background: #bfbfbf;
+	box-shadow: 0 0 4px 0px #000, 0 0 2px 1px #fff inset;
+	margin: 0 0 0 20px;
+	border-radius: 5px;
+}
+
+.hover__menu:hover {
+	background: #2bee30;
+}
+.hover-reset {
+	cursor: pointer;
+	box-shadow: 0px 0px 0px 1px #000000 inset;
+	background: transparent;
+	padding: 5px;
+}
+.hover-reset:hover {
+	background-color: #2bee30;
+}
+.shadow-axes {
+	display: flex;
+	text-align: center;
+	gap: 10px;
+}
