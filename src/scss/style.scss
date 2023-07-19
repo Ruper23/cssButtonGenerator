@@ -123,6 +123,12 @@ label{
 select{
 	background: transparent;
 	border: none;
+  width: 100px;
+}
+#transparent:checked ~ .checkbox-theme,
+#hover__toggle:checked ~ .checkbox-theme,
+#shadow-inset:checked ~ .checkbox-theme {
+	color: green;
 }
 .input__color{
 	width: 40px;
@@ -178,3 +184,4 @@ input[type="color"]{
 @import 'header.scss';
 @import 'basic.scss';
 @import 'border.scss';
+@import 'hover.scss';
