@@ -9,91 +9,141 @@
   <div class="wrapper">
     @@include('html/header.html',{})
     <main class="main">
-      <section class="basic">
-        <div class="settings__main-color section">
-          <h3 class="main__color-title h3-title">Background color</h3>
-          <div class="color__pick main__color-bg settings-block">
-            <div class="input__color">
-              <input type="color" id="color__pick" value="#bfbfbf">
+      <div class="container">
+        <section class="basic">
+          <div class="settings__main-color section">
+            <h3 class="main__color-title h3-title">Background color</h3>
+            <div class="color__pick main__color-bg settings-block">
+              <div class="input__color">
+                <input type="color" id="color__pick" value="#bfbfbf">
+              </div>
+              <div class="input__text">
+                <input type="text" id="bg__input" value="#bfbfbf">
+              </div>
             </div>
-            <div class="input__text">
-              <input type="text" id="bg__input" value="#bfbfbf">
-            </div>
-          </div>
-          <div class="hover-chekbox">
-            <input type="checkbox" class="hover__toggle" id="hover__toggle">
-            <label for="hover__toggle" class="checkbox-theme">:hover</label>
-            <button class="hover__menu">Hover menu</button>
-          </div>
-        </div>
-        <div class="settings__text section">
-          <div class="text settings-block">
-            <h4 class="h4-title">Button text</h4>
-            <input type="text" class="settings__text-input" placeholder="Text">
-          </div>
-          <div class="text__fontfamily settings-block">
-            <h4 class="h4-title">font-family:</h4>
-            <select name="fonts" id="fontfamily">
-              <option value="Arial">Arial</option>
-              <option value="Arial Rounded MT Bold">Rounded</option>
-              <option value="Forte">Forte</option>
-            </select>
-          </div>
-          <div class="text__fontweight settings-block">
-            <h4 class="h4-title">font-weight:</h4>
-            <select name="weight" id="fontweight">
-              <option value="100">100</option>
-              <option value="200">200</option>
-              <option value="300">300</option>
-              <option value="400">400</option>
-              <option value="500">500</option>
-              <option value="600">600</option>
-              <option value="700">700</option>
-              <option value="800">800</option>
-              <option value="900">900</option>
-            </select>
-          </div>
-          <div class="text__fontsize settings-block">
-            <h4 class="h4-title">font-size:</h4>
-            <input type="number" class="text__fontsize-input" value="15" placeholder="15">
-          </div>
-          <div class="text__color settings-block">
-            <h4 class="h4-title">color:</h4>
-            <div class="input__text">
-              <input type="text" class="text__color-output" value="#bfbfbf">
-            </div>
-            <div class="input__color">
-              <input type="color" class="text__color-input">
+            <div class="hover-chekbox">
+              <input type="checkbox" class="hover__toggle" id="hover__toggle">
+              <label for="hover__toggle" class="checkbox-theme">:hover</label>
+              <button class="hover__menu">Hover menu</button>
             </div>
           </div>
-        </div>
-        <div class="button section">
-          <h3 class="h3-title">Button color</h3>
-          <div class="button__color  settings-block">
-            <div class="input__color">
-              <input type="color" id="button__color" value="#f20000">
+          <div class="settings__text section">
+            <div class="text settings-block">
+              <h4 class="h4-title">Button text</h4>
+              <input type="text" class="settings__text-input" placeholder="Text">
             </div>
-            <div class="input__text">
-              <input type="text" class="button__color-output" value="#f20000">
+            <div class="text__fontfamily settings-block">
+              <h4 class="h4-title">font-family:</h4>
+              <select name="fonts" id="fontfamily">
+                <option value="BebasNeue">BebasNeue</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="NotoSans">NotoSans</option>
+                <option value="OpenSans">OpenSans</option>
+                <option value="Oswald">Oswald</option>
+                <option value="PTSerif">PTSerif</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Raleway">Raleway</option>
+                <option value="Rubik">Rubik</option>
+                <option value="Ubuntu">Ubuntu</option>
+              </select>
+            </div>
+            <div class="text__fontweight settings-block">
+              <h4 class="h4-title">font-weight:</h4>
+              <select name="weight" id="fontweight">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="700">700</option>
+                <option value="800">800</option>
+                <option value="900">900</option>
+              </select>
+            </div>
+            <div class="text__fontsize settings-block">
+              <h4 class="h4-title">font-size:</h4>
+              <input type="number" class="text__fontsize-input" value="15" placeholder="15">
+            </div>
+            <div class="text__color settings-block">
+              <h4 class="h4-title">color:</h4>
+              <div class="input__text">
+                <input type="text" class="text__color-output" value="#bfbfbf">
+              </div>
+              <div class="input__color">
+                <input type="color" class="text__color-input">
+              </div>
             </div>
           </div>
-          <div class="button__color-transparent">
-            <input type="checkbox" id="transparent" class="transparent">
-            <label for="transparent" class="checkbox-theme">transparent</label>
+          <div class="button section">
+            <h3 class="h3-title">Button color</h3>
+            <div class="button__color  settings-block">
+              <div class="input__color">
+                <input type="color" id="button__color" value="#f20000">
+              </div>
+              <div class="input__text">
+                <input type="text" class="button__color-output" value="#f20000">
+              </div>
+            </div>
+            <div class="button__color-transparent">
+              <input type="checkbox" id="transparent" class="transparent">
+              <label for="transparent" class="checkbox-theme">transparent</label>
+            </div>
+            <div class="parameters settings-block">
+              <h4 class="width__title">Width:</h4>
+              <input type="number" id="settings__width-input" value="120">
+            </div>
+            <div class="parameters settings-block">
+              <h4 class="width__title">Height:</h4>
+              <input type="number" id="settings__height-input" value="60">
+            </div>
           </div>
-        </div>
-        <div class="settings__main-width section">
-          <h3 class="h3-title">Parameters</h3>
-          <div class="parameters settings-block">
-            <h4 class="width__title">Width:</h4>
-            <input type="number" id="settings__width-input" value="120">
+          <div class="settings__main-border section">
+            <h3 class="h3-title">Border</h3>
+            <div class="border__type">
+              <div class="border__type-radio">
+                <input type="radio" name="radio" id="none" value="none" checked>
+                <label class="radio-style none" for="none">
+                  <div class="dot"></div>
+                </label>
+                <label for="none" class="checkbox-theme">None</label>
+              </div>
+              <div class="border__type-radio">
+                <input type="radio" name="radio" id="solid" value="solid">
+                <label class="radio-style solid" for="solid">
+                  <div class="dot"></div>
+                </label>
+                <label for="solid" class="checkbox-theme">Solid</label>
+              </div>
+              <div class="border__type-radio">
+                <input type="radio" name="radio" id="dashed" value="dashed">
+                <label class="radio-style dashed" for="dashed">
+                  <div class="dot"></div>
+                </label>
+                <label for="dashed" class="checkbox-theme">Dashed</label>
+              </div>
+              <div class="border__type-radio">
+                <input type="radio" name="radio" id="dotted" value="dotted">
+                <label class="radio-style dotted" for="dotted">
+                  <div class="dot"></div>
+                </label>
+                <label for="dotted" class="checkbox-theme">Dotted</label>
+              </div>
+            </div>
+            <div class="border__type">
+              <div class="input__color">
+                <input type="color" name="color" id="border__color">
+              </div>
+              <div class="border__height">
+                <input type="number" id="border__height" min="0" value="0">px
+              </div>
+              <div class="border__radius">
+                <input type="number" name="number" id="border__radius" min="0" value="">radius
+              </div>
+            </div>
           </div>
-          <div class="parameters settings-block">
-            <h4 class="width__title">Height:</h4>
-            <input type="number" id="settings__height-input" value="60">
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
     </main>
     @@include('html/footer.html',{})

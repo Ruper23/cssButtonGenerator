@@ -38,7 +38,10 @@ $maxWidth: 1440;
 // ###################################################
 
 
-
+*{
+  transition: all 0.3s ease;
+  font-family: Montserrat;
+}
 html,
 body {
   width: 100%;
@@ -137,5 +140,41 @@ input[type="color"]{
 	min-width: 60px;
 	height: 45px;
 }
+.red{
+	color: #b51a44;
+}
+.white{
+	color: white;
+}
+.blue{
+	color: #0db5bd;
+}
+.green{
+	color: #2bee30;
+}
+.purple{
+	color: #8a2efc;
+}
+.orange{
+	color: #d6a81d
+}
+.h3-title{
+	margin: 5px 0;
+	color: #252525;
+}
+.h4-title{
+	color: #252525;
+}
+.section{
+	padding: 10px;
+	box-shadow: 0 0 4px 0px #000, 0 0 2px 1px #fff inset;
+	width: 100%;
+	
+} 
+.padding-l-10 {
+	padding-left: 10px;
+}
 /* ########################################################## */
-@import 'header.scss'
+@import 'header.scss';
+@import 'basic.scss';
+@import 'border.scss';
