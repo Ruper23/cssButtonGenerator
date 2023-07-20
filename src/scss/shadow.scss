@@ -1,0 +1,94 @@
+
+.button__shadow {
+	display: flex;
+	flex-direction: column;
+	width: auto;
+}
+.button__shadow-block {
+	border-bottom: 2px solid #4f5150;
+	position: relative;
+	transition: all 0.3s ease;
+}
+.button__shadow-block.hide {
+	height: 55px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+.add__shadow {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 5px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 2px 1px #000000;
+}
+.add__shadow svg {
+  width: 14px;
+  height: 14px;
+}
+.add__shadow:hover {
+	background-color: #2bee30;
+	box-shadow: 0 0 2px 1px #fff;
+}
+.add__shadow:active {
+	background-color: #4f9af7;
+	box-shadow: 0 0 2px 1px #80f479, 0 0 2px 1px #e9fde8 inset;
+	text-shadow: 0 0 3px #fff;
+}
+/*.range{
+	width: 80%;
+}*/
+.input__color {
+	display: flex;
+	margin: 5px 0;
+}
+.show-hide {
+	position: absolute;
+	right: 0;
+	top: 40px;
+	width: 20px;
+	height: 20px;
+	background-color: transparent;
+	transition: all 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.show-hide.hide {
+	transform: rotate(180deg);
+}
+.shadow__x-txt,
+.shadow__y-txt,
+.shadow__blur-txt,
+.shadow__spread-txt {
+	position: relative;
+}
+.shadow__x-txt:before,
+.shadow__y-txt:before,
+.shadow__blur-txt:before,
+.shadow__spread-txt:before {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	right: -25px;
+	font-size: 16px;
+	color: #282923;
+}
+.shadow__x-txt:before {
+	content: "X";
+}
+.shadow__y-txt:before {
+	content: "Y";
+}
+.shadow__blur-txt:before {
+	content: "Blur";
+}
+.shadow__spread-txt:before {
+	content: "Spread";
+}
+
+
