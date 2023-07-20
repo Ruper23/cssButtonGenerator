@@ -6,7 +6,8 @@
 	width: 300px;
 	display: none;
 	flex-direction: column;
-	background-color: inherit;
+	background-color: #bfbfbf;
+	z-index: 2;
 }
 .hover-section.active {
 	display: flex;
