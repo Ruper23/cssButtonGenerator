@@ -551,6 +551,8 @@ input[type=color] {
 
 /* ########################################################## */
 
+/* Header */
+
 .header__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -658,6 +660,8 @@ h1 {
   padding: 20px;
 }
 
+/* Basic */
+
 .basic {
   width: 100%;
   display: -webkit-box;
@@ -686,6 +690,8 @@ h1 {
 .button__color-transparent {
   padding: 0 20px;
 }
+
+/* border */
 
 .border__type {
   height: 20px;
@@ -808,6 +814,8 @@ h1 {
   display: none;
 }
 
+/* hover */
+
 .hover-section {
   position: absolute;
   top: 50px;
@@ -890,8 +898,6 @@ h1 {
   border-radius: 50%;
   border: 1px solid #000;
   background: #bfbfbf;
-  font-size: 24px;
-  line-height: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -903,6 +909,11 @@ h1 {
           justify-content: center;
   -webkit-box-shadow: 0 0 4px 0px #000, 0 0 2px 1px #fff inset;
           box-shadow: 0 0 4px 0px #000, 0 0 2px 1px #fff inset;
+}
+
+.hover-close svg {
+  width: 14px;
+  height: 14px;
 }
 
 .hover__menu {
@@ -938,6 +949,8 @@ h1 {
   text-align: center;
   gap: 10px;
 }
+
+/* Code Button */
 
 .constructor {
   display: -webkit-box;
@@ -1013,4 +1026,140 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   padding: 10px;
+}
+
+/* shadow */
+
+.button__shadow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+}
+
+.button__shadow-block {
+  border-bottom: 2px solid #4f5150;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button__shadow-block.hide {
+  height: 55px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.add__shadow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 0 2px 1px #000000;
+          box-shadow: 0 0 2px 1px #000000;
+}
+
+.add__shadow svg {
+  width: 14px;
+  height: 14px;
+}
+
+.add__shadow:hover {
+  background-color: #2bee30;
+  -webkit-box-shadow: 0 0 2px 1px #fff;
+          box-shadow: 0 0 2px 1px #fff;
+}
+
+.add__shadow:active {
+  background-color: #4f9af7;
+  -webkit-box-shadow: 0 0 2px 1px #80f479, 0 0 2px 1px #e9fde8 inset;
+          box-shadow: 0 0 2px 1px #80f479, 0 0 2px 1px #e9fde8 inset;
+  text-shadow: 0 0 3px #fff;
+}
+
+/*.range{
+	width: 80%;
+}*/
+
+.input__color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px 0;
+}
+
+.show-hide {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show-hide.hide {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.shadow__x-txt,
+.shadow__y-txt,
+.shadow__blur-txt,
+.shadow__spread-txt {
+  position: relative;
+}
+
+.shadow__x-txt:before,
+.shadow__y-txt:before,
+.shadow__blur-txt:before,
+.shadow__spread-txt:before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: -25px;
+  font-size: 16px;
+  color: #282923;
+}
+
+.shadow__x-txt:before {
+  content: "X";
+}
+
+.shadow__y-txt:before {
+  content: "Y";
+}
+
+.shadow__blur-txt:before {
+  content: "Blur";
+}
+
+.shadow__spread-txt:before {
+  content: "Spread";
 }

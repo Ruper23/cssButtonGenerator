@@ -53,12 +53,14 @@
 	border-radius: 50%;
 	border: 1px solid #000;
 	background: #bfbfbf;
-	font-size: 24px;
-	line-height: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	box-shadow: 0 0 4px 0px #000, 0 0 2px 1px #fff inset;
+}
+.hover-close svg {
+	width: 14px;
+	height: 14px;
 }
 .hover__menu {
 	width: 100px;

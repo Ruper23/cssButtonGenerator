@@ -221,9 +221,54 @@
             </div>
           </div>
           <div class="element__settings">
+            <div class="button__shadow section">
+              <h3 class="h3-title">Box-shadow</h3>
+              <div class="button__shadow-block" data-shadows='0'>
+                <h4 class="h4-title">Color</h4>
+                <div class="input__color">
+                  <input type="color" class="shadow__color" data-shadows="0">
+                </div>
+                <input type="checkbox" class="button__shadow-inset" data-shadows="0"><span>inset</span>
+                <button class="show-hide" data-hide="0"><svg width="74" height="42" viewBox="0 0 74 42" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M32 6C32 8.76142 34.2386 11 37 11C39.7614 11 42 8.76142 42 6L32 6ZM40.5355 1.46447C38.5829 -0.488155 35.4171 -0.488155 33.4645 1.46447L1.64466 33.2843C-0.307962 35.2369 -0.307962 38.4027 1.64466 40.3553C3.59728 42.308 6.76311 42.308 8.71573 40.3553L37 12.0711L65.2843 40.3553C67.2369 42.308 70.4027 42.308 72.3553 40.3553C74.308 38.4027 74.308 35.2369 72.3553 33.2843L40.5355 1.46447ZM42 6L42 5L32 5L32 6L42 6Z"
+                      fill="black" />
+                  </svg>
+                </button>
+                <div>
+                  <input type="range" class="button__shadow-x range" min="-50" max="50" value="0" data-shadows="0">
+                  <span class="shadow__x-txt">0px</span>
 
+                </div>
+                <div>
+                  <input type="range" class="button__shadow-y range" min="-50" max="50" value="0" data-shadows="0">
+                  <span class="shadow__y-txt">0px</span>
+                </div>
+                <div>
+                  <input type="range" class="button__shadow-blur range" min="0" max="100" value="0" data-shadows="0">
+                  <span class="shadow__blur-txt">0px</span>
+                </div>
+                <div>
+                  <input type="range" class="button__shadow-spread range" min="0" max="20" value="0" data-shadows="0">
+                  <span class="shadow__spread-txt">0px</span>
+                </div>
+              </div>
+              <button class="add__shadow"><svg width="85" height="85" viewBox="0 0 85 85" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 43H80" stroke="black" stroke-width="13" stroke-linecap="round" />
+                  <path d="M43 5L42.2066 79.9958" stroke="black" stroke-width="13" stroke-linecap="round" />
+                </svg>
+              </button>
+
+            </div>
             <div class="hover-section section">
-              <button class="hover-close">+</button>
+              <button class="hover-close"><svg width="85" height="85" viewBox="0 0 85 85" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 43H80" stroke="black" stroke-width="10" stroke-linecap="round" />
+                  <path d="M43 5L42.2066 79.9958" stroke="black" stroke-width="10" stroke-linecap="round" />
+                </svg>
+              </button>
               <button class="hover-reset">reset</button>
               <h2>Hover</h2>
               <div class="hover__transition hover-df">
@@ -250,13 +295,13 @@
               <div class="hover__color hover-df">
                 <h4 class="h4-title">color:</h4>
                 <div class="input__color">
-                  <input type="color" class="hover__bgcolor-input" value="">
+                  <input type="color" class="hover__bgcolor-input">
                 </div>
               </div>
               <div class="hover__textcolor hover-df">
                 <h4 class="h4-title">text-color:</h4>
                 <div class="input__color">
-                  <input type="color" class="hover__textcolor-input" value="">
+                  <input type="color" class="hover__textcolor-input">
                 </div>
               </div>
               <div class="hover__fontsize hover-df">
