@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css?_v=20230719110114">
+  <link rel="stylesheet" href="css/style.min.css?_v=20230720101930">
   <title>CSS Button generator</title>
 </head>
 
@@ -111,11 +111,11 @@
               <label for="transparent" class="checkbox-theme">transparent</label>
             </div>
             <div class="parameters settings-block">
-              <h4 class="width__title">Width:</h4>
+              <h4 class="width__title">width:</h4>
               <input type="number" id="settings__width-input" value="120">
             </div>
             <div class="parameters settings-block">
-              <h4 class="width__title">Height:</h4>
+              <h4 class="width__title">height:</h4>
               <input type="number" id="settings__height-input" value="60">
             </div>
           </div>
@@ -164,6 +164,164 @@
             </div>
           </div>
         </section>
+        <section class="constructor">
+          <div class="element__section">
+            <div class="element__bg">
+              <button class="element__element">Text</button>
+            </div>
+            <div class="element__code">
+              <code class="code">
+                <div class="main-class">
+                  <div class="main__title">
+                    <span class="green">.button</span> <span class="white">{</span>
+                  </div>
+                  <div class="vh-block padding-l-10">
+                    <span class="blue">width</span><span class="white">:</span> <span class="purple btn__width">120</span><span class="red">px</span><span class="white">;</span> <br>
+                    <span class="blue">height</span><span class="white">:</span> <span class="purple btn__height">60</span><span class="red">px</span><span class="white">;</span>
+                  </div>
+                  <div class="padding-l-10">
+                    <span class="blue">background-color</span><span class="white">:</span> <span class="purple btn__color">#f20000</span><span class="white">;</span>
+                  </div>
+                
+                  <div class="border-block disabled padding-l-10">
+                    <span class="blue">border</span><span class="white">:</span> <span class="purple btn__border">none</span><span class="btn__border-color purple"></span><span class="white">;</span>
+                  </div>
+                  <div class="border-radius disabled padding-l-10">
+                    <span class="blue">border-radius</span><span class="white">:</span> <span class="purple btn__border-radius">0</span><span class="red">px</span><span class="white">;</span>
+                  </div>
+                  <div class="text-block disabled padding-l-10">
+                    <span class="blue">font-size</span><span class="white">:</span> <span class="purple btn__font-size"></span><span class="red">px</span><span class="white">;</span>
+                  </div>
+                  <div class="text-fontfamily disabled padding-l-10">
+                    <span class="blue">font-family</span><span class="white">:</span> <span class="orange btn__font-family"></span><span class="white">;</span>
+                  </div>
+                  <div class="text-fontweight disabled padding-l-10">
+                    <span class="blue">font-weight</span><span class="white">:</span> <span class="purple btn__font-weight"></span><span class="white">;</span>
+                  </div>
+                  <div class="text-color disabled padding-l-10">
+                    <span class="blue">color</span><span class="white">:</span><span class="purple btn__font-color"></span><span class="white">;</span>
+                  </div>
+                  <div class="shadow-block disabled padding-l-10">
+                    <span class="blue">box-shadow</span><span class="white">:</span> <span class="purple btn__shadow-x"></span> <span class="white">;</span>
+                  </div> 
+                  <div class="hover__transition-block padding-l-10 disabled" data-archor="1">
+                    <span class="blue">transition</span><span class="white">:</span> <span class="purple hover__transition-output">0.5</span><span class="red">s <span class="purple">all</span></span><span class="white"> <span class="purple hover__transition-timing"></span>;</span>
+                  </div>
+                <span class="white">}</span>
+                </div>					
+                <div class="hover-class">
+                  <div class="main__title">
+                    <span class="green">.button<span class="white">:hover</span></span> <span class="white">{</span>
+                  </div>
+                  <div class="hover__width-block padding-l-10 disabled" data-archor="1">
+                    <span class="blue">width</span><span class="white">:</span> <span class="purple hover__width">120</span><span class="red">px</span><span class="white">;</span> <br>
+                    
+                  </div>
+                  <div class="hover__height-block padding-l-10 disabled" data-archor="1">
+                    <span class="blue">height</span><span class="white">:</span> <span class="purple hover__height">60</span><span class="red">px</span><span class="white">;</span>
+                  </div>
+                  <div class="hover__bgcolor-block padding-l-10 disabled" data-archor="1">
+                    <span class="blue">background-color</span><span class="white">:</span> <span class="purple hover__bgcolor-output">#f20000</span><span class="white">;</span>
+                  </div>
+                  <div class="hover__fontsize-block padding-l-10 disabled" data-archor="1">
+                    <span class="blue">font-size</span><span class="white">:</span> <span class="purple hover__font-size"></span><span class="red">px</span><span class="white">;</span>
+                    <br>
+                    </div>
+                    <div class="hover__color-block padding-l-10 disabled" data-archor="1">
+                      <span class="blue">color</span><span class="white">:</span> <span class="purple hover__font-color"></span><span class="white">;</span>
+                    </div>
+                    <div class="hover__shadow-block padding-l-10 disabled" data-archor="1">
+                      <span class="blue">box-shadow</span><span class="white">:</span> <span class="purple hover__shadow-output"></span> <span class="white">;</span>
+                    </div> 
+                    <div class="hover__transform-block padding-l-10 disabled" data-archor="1">
+                      <span class="blue">transform</span><span class="white">:</span> <span class="purple">scale(<span class="purple hover__transform-output"></span>)</span>  <span class="white">;</span>
+                    </div> 
+                  <span class="white">}</span>
+                </div>
+               </code>
+            </div>
+          </div>
+          <div class="element__settings">
+
+            <div class="hover-section section">
+              <button class="hover-close">+</button>
+              <button class="hover-reset">reset</button>
+              <h2>Hover</h2>
+              <div class="hover__transition hover-df">
+                <h4 class="h4-title">transition</h4>
+                <input type="number" min="0" step="0.1" class="hover__transition-input">
+                <select name="transition" id="transition">
+                  <option value="linear">linear</option>
+                  <option value="ease">ease</option>
+                  <option value="ease-in">ease-in</option>
+                  <option value="ease-out">ease-out</option>
+                  <option value="ease-in-out">ease-in-out</option>
+                </select>
+              </div>
+              <div class="hover__parameters">
+                <div class="hover__width hover-df">
+                  <h4 class="h4-title">width:</h4>
+                  <input type="number" class="hover__width-input" min="0" value="120">
+                </div>
+                <div class="hover__height hover-df">
+                  <h4 class="h4-title">height:</h4>
+                  <input type="number" class="hover__height-input" min="0" value="60">
+                </div>
+              </div>
+              <div class="hover__color hover-df">
+                <h4 class="h4-title">color:</h4>
+                <div class="input__color">
+                  <input type="color" class="hover__bgcolor-input" value="">
+                </div>
+              </div>
+              <div class="hover__textcolor hover-df">
+                <h4 class="h4-title">text-color:</h4>
+                <div class="input__color">
+                  <input type="color" class="hover__textcolor-input" value="">
+                </div>
+              </div>
+              <div class="hover__fontsize hover-df">
+                <h4 class="h4-title">font-size:</h4>
+                <input type="number" class="hover__fontsize-input">
+              </div>
+              <div class="hover__transform hover-df">
+                <h4 class="h4-title">scale</h4>
+                <input type="number" class="transform__scale-input" step="0.05">
+              </div>
+              <div class="hover__shadow">
+                <h4 class="h4-title">box-shadow</h4>
+
+                <div class="hover__shadow-settings">
+                  <div class="hover__shadow-inset">
+                    <input type="checkbox" class="shadow-inset" id="shadow-inset">
+                    <label for="shadow-inset" class="checkbox-theme">inset</label>
+                  </div>
+                  <div class="shadow-axes">
+                    <div class="shadow-x">
+                      <p>x</p>
+                      <input type="number" class="hover__shadow-x" value="0" placeholder="X">
+                    </div>
+                    <div class="shadow-y">
+                      <p>y</p>
+                      <input type="number" class="hover__shadow-y" value="0" placeholder="Y">
+                    </div>
+                    <div class="shadow-blur">
+                      <p>blur</p>
+                      <input type="number" class="hover__shadow-blur" value="0" placeholder="blur">
+                    </div>
+                    <div class="shadow-spread">
+                      <p>spread</p>
+                      <input type="number" class="hover__shadow-spread" value="0" placeholder="spread">
+                    </div>
+                  </div>
+                  <div class="input__color">
+                    <input type="color" class="hover__shadow-color">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
     </main>
@@ -173,7 +331,7 @@
   </div>
 
 
-  <script src="js/app.min.js?_v=20230719110114"></script>
+  <script src="js/app.min.js?_v=20230720101930"></script>
 </body>
 
 </html>
