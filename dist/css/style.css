@@ -465,6 +465,10 @@ select {
           flex: 1 1 auto;
 }
 
+.link {
+  color: #303030;
+}
+
 label {
   cursor: pointer;
 }
@@ -566,11 +570,6 @@ input[type=color] {
 
 .link:hover > svg > path {
   fill: #303030;
-}
-
-.link:hover {
-  -webkit-box-shadow: 10px 10px 30px #868686, -10px -10px 30px #ffffff;
-          box-shadow: 10px 10px 30px #868686, -10px -10px 30px #ffffff;
 }
 
 .header__title {
@@ -1162,4 +1161,44 @@ h1 {
 
 .shadow__spread-txt:before {
   content: "Spread";
+}
+
+/* footer */
+
+.footer {
+  height: 3.4em;
+  border-top: 1px solid #303030;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__wrap {
+  padding: 0 1.33em;
+}
+
+.social__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.33em;
+}
+
+.link {
+  color: #303030;
+  position: relative;
+}
+
+.link:after {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: url("../svgicons/github.svg") 0 0/contain no-repeat;
+  z-index: 3;
 }
