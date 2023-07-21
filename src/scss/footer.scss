@@ -1,0 +1,29 @@
+.footer{
+  height: 3.4em;
+  border-top: 1px solid #303030;
+  display: flex;
+  align-items: center;
+}
+.footer__wrap {
+  padding: 0 1.33em;
+}
+
+.social__links {
+  display: flex;
+  gap: 1.33em;
+}
+
+.link {
+  color:#303030;
+  position: relative;
+}
+.link:after{
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: url('../svgicons/github.svg') 0 0 / contain no-repeat;
+  z-index: 3;
+}
