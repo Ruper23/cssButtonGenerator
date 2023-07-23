@@ -80,3 +80,47 @@ textColorInput.onchange = () => {
 	textColorOutput.value = textColorInput.value
 	btnFontColor.textContent = textColorInput.value
 }
+/*button color*/
+
+const buttonColorBlock = document.querySelector('.button')
+const buttonColor = document.querySelector('#button__color')
+const buttonColorOutput = document.querySelector('.button__color-output')
+const transparentInput = document.querySelector('.transparent')
+
+const transparentCheked = () =>{
+	if(transparentInput.checked){
+		btnColorSpan.textContent = 'transparent'
+		buttonElement.classList.add('transparent-active')
+		buttonColor.classList.add('transparent-active')
+		buttonColorOutput.classList.add('transparent-active')
+	}else{
+		btnColorSpan.textContent = buttonColor.value
+		buttonElement.classList.remove('transparent-active')
+		buttonColor.classList.remove('transparent-active')
+		buttonColorOutput.classList.remove('transparent-active')
+	}
+}
+
+buttonColorBlock.onchange = () => {
+	btnColorSpan.textContent = buttonColor.value
+	colorSetFunc(buttonElement,buttonColor,buttonColorOutput)
+	transparentCheked()
+}
+buttonColorOutput.onchange = () =>{
+	colorSetFunc(buttonElement,buttonColorOutput,buttonColor)
+	btnColorSpan.textContent = buttonColor.value
+	transparentCheked()
+}
+/*Width & Height*/
+
+const settingsWidth = document.querySelector('#settings__width-input')
+const settingsHeight = document.querySelector('#settings__height-input')
+const settingsMainProperty = document.querySelector('.settings__main-width')
+
+
+settingsMainProperty.onchange = () => {
+	buttonElement.style.width = `${settingsWidth.value}px`
+	buttonElement.style.height = `${settingsHeight.value}px`
+	btnWidthSpan.textContent = settingsWidth.value
+	btnHeightSpan.textContent = settingsHeight.value
+}
