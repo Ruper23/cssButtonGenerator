@@ -124,3 +124,62 @@ settingsMainProperty.onchange = () => {
 	btnWidthSpan.textContent = settingsWidth.value
 	btnHeightSpan.textContent = settingsHeight.value
 }
+
+
+/*BORDER*/
+
+const borderSettingsBlock = document.querySelector('.settings__main-border')
+const borderHeight = document.querySelector('#border__height')
+const borderColor = document.querySelector('#border__color')
+const dotted = document.querySelector('#dotted')
+const borderTypes = document.querySelectorAll('input[name="radio"]')
+const borderTypesBlock = document.querySelector('.border__type')
+const borderRadius = document.querySelector('#border__radius')
+const borderRadiusBlock = document.querySelector('.border-radius')
+const btnBorderColor = document.querySelector('.btn__border-color')
+const borderBlock = document.querySelector('.border-block')
+let borderTypeSelected
+const borderTypeChange = () => {
+	if (borderTypes[0].checked) { borderTypeSelected = borderTypes[0].value }
+	if (borderTypes[1].checked) { borderTypeSelected = borderTypes[1].value }
+	if (borderTypes[2].checked) { borderTypeSelected = borderTypes[2].value }
+	if (borderTypes[3].checked) { borderTypeSelected = borderTypes[3].value }
+
+}
+/*borderTypesBlock.onchange = () =>{
+		for(borderType of borderTypes){
+		if(borderType.checked){
+			borderTypeSelected = borderType.value
+			break
+		}
+	}
+}*/
+const borderRadiusChange = () => {
+	if (borderRadius.value == "0" || borderRadius.value == '') {
+		borderRadiusBlock.style.display = 'none'
+	}else{
+		buttonElement.style.borderRadius = `${borderRadius.value}px`
+		borderRadiusSpan.textContent = borderRadius.value
+		borderRadiusBlock.style.display = 'block'
+	}
+	
+
+}
+const borderSettingsChange = () => {
+	buttonElement.style.border = `${borderHeight.value}px ${borderTypeSelected} ${borderColor.value}`
+	if (borderTypeSelected == 'none') {
+		borderBlock.style.display = 'none'
+		btnBorderSpan.textContent = `none`
+		btnBorderColor.textContent = ''
+	} else {
+		btnBorderSpan.textContent = `${borderHeight.value}px ${borderTypeSelected} `
+		btnBorderColor.textContent = `${borderColor.value}`
+		borderBlock.style.display = 'block'
+	}
+}
+
+borderSettingsBlock.onchange = () => {
+	borderTypeChange()
+	borderSettingsChange()
+	borderRadiusChange()
+}
