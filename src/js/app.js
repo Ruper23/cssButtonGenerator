@@ -183,3 +183,76 @@ borderSettingsBlock.onchange = () => {
 	borderSettingsChange()
 	borderRadiusChange()
 }
+
+
+
+
+
+/*HOVER*/
+
+
+const hoverClass = document.querySelector('.hover-class')
+const hoverSection = document.querySelector('.hover-section')
+const hoverToggle = document.querySelector('.hover__toggle')
+const hoverClose = document.querySelector('.hover-close')
+const hoverMenuBtn = document.querySelector('.hover__menu') 
+
+/* hover Inputs values*/
+const hoverTransitionInput = document.querySelector('.hover__transition-input')
+const hoverTransitionTimming = document.querySelector('#transition')
+const hoverWidthInput = document.querySelector('.hover__width-input')
+const hoverHeightInput = document.querySelector('.hover__height-input')
+const hoverBgcolorInput = document.querySelector('.hover__bgcolor-input')
+const hoverTextColorInput = document.querySelector('.hover__textcolor-input')
+const hoverFontSizeInput = document.querySelector('.hover__fontsize-input')
+const transformScaleInput = document.querySelector('.transform__scale-input')
+const hoverShadows = document.querySelector('.shadow-axes')
+const hoverShadowInset = document.querySelector('.shadow-inset')
+const hoverShadowX = document.querySelector('.hover__shadow-x')
+const hoverShadowY = document.querySelector('.hover__shadow-y')
+const hoverShadowBlur = document.querySelector('.hover__shadow-blur')
+const hoverShadowSpread = document.querySelector('.hover__shadow-spread')
+const hoverShadowColor = document.querySelector('.hover__shadow-color')
+
+/*hover output txt*/
+const hoverWidthBlock = document.querySelector('.hover__width-block')
+const hoverHeightBlock = document.querySelector('.hover__height-block')
+
+const hoverBgColorBlock = document.querySelector('.hover__bgcolor-block')
+const hoverTransitionBlock = document.querySelector('.hover__transition-block')
+const hoverFontsizeBlock = document.querySelector('.hover__fontsize-block')
+const hoverColorBlock = document.querySelector('.hover__color-block')
+const hoverShadowBlock = document.querySelector('.hover__shadow-block')
+const hoverTransformBlock = document.querySelector('.hover__transform-block')
+
+
+const hoverWidth = document.querySelector('.hover__width')
+const hoverHeight = document.querySelector('.hover__height')
+const hoverBgColor = document.querySelector('.hover__bgcolor-output')
+const hoverTransition = document.querySelector('.hover__transition-output')
+const hoverTransitionTime = document.querySelector('.hover__transition-timing')
+const hoverFontSize = document.querySelector('.hover__font-size')
+const hoverFontColor = document.querySelector('.hover__font-color')
+const hoverBoxShadow = document.querySelector('.hover__shadow-output')
+const hoverTransform = document.querySelector('.hover__transform-output')
+
+let isHoverBGChange = false
+let isHoverTextColorChange = false
+/* Открытие/закрытие окна с ховер настройками*/
+hoverClose.onclick = () =>{
+	hoverSection.classList.remove('active')
+}
+hoverMenuBtn.onclick = () => {
+	hoverSection.classList.toggle('active')
+}
+const visibleHoverBlockOutput = () =>{
+	if (hoverWidthInput.value.length > 0 || hoverHeightInput.value.length > 0 || hoverBgcolorInput.value.length > 0 || hoverTransitionInput.value.length > 0 || hoverFontSizeInput.value.length > 0 || hoverTextColorInput.value.length > 0 ) {
+		hoverClass.style.display = 'flex'
+	} else{
+		hoverClass.style.display = 'none'
+	}
+}
+hoverToggle.onchange = () =>{
+	hoverToggle.checked ? hoverSection.classList.add('active') : hoverSection.classList.remove('active')
+	//hoverToggle.checked ? true : hoverClass.style.display = 'none'
+}
