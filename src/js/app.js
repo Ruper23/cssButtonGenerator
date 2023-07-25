@@ -252,6 +252,62 @@ const visibleHoverBlockOutput = () =>{
 		hoverClass.style.display = 'none'
 	}
 }
+/**/
+hoverWidthInput.onchange = () =>{
+	hoverWidthInput.value.length > 0 ? hoverWidthBlock.classList.remove('disabled') : hoverWidthBlock.classList.add('disabled')
+	hoverWidth.textContent = hoverWidthInput.value
+	visibleHoverBlockOutput()
+}
+hoverHeightInput.onchange = () =>{
+	hoverHeightInput.value.length > 0 ? hoverHeightBlock.classList.remove('disabled') : hoverHeightBlock.classList.add('disabled')	
+	hoverHeight.textContent = hoverHeightInput.value
+	visibleHoverBlockOutput()
+}
+hoverBgcolorInput.onchange = () =>{
+	hoverBgcolorInput.value.length > 0 ? hoverBgColorBlock.classList.remove('disabled') : hoverBgColorBlock.classList.add('disabled')
+	hoverBgColor.textContent = hoverBgcolorInput.value
+	isHoverBGChange = true
+	visibleHoverBlockOutput()
+}
+hoverTransitionInput.onchange = () =>{
+	hoverTransitionInput.value.length > 0 ? hoverTransitionBlock.classList.remove('disabled') : hoverTransitionBlock.classList.add('disabled')
+	hoverTransition.textContent = hoverTransitionInput.value
+	buttonElement.style.transition = `${hoverTransitionInput.value}s all ${hoverTransitionTimming.value}`
+}
+hoverTransitionTimming.onchange = () =>{
+	hoverTransitionTime.textContent = hoverTransitionTimming.value
+	buttonElement.style.transition = `${hoverTransitionInput.value}s all ${hoverTransitionTimming.value}`
+}
+hoverTextColorInput.onchange = () =>{
+	hoverTextColorInput.value.length > 0 ? hoverColorBlock.classList.remove('disabled') : hoverColorBlock.classList.add('disabled')
+	hoverFontColor.textContent = hoverTextColorInput.value
+	visibleHoverBlockOutput()
+	isHoverTextColorChange = true
+}
+hoverFontSizeInput.onchange = () =>{
+	hoverFontSizeInput.value.length > 0 ? hoverFontsizeBlock.classList.remove('disabled') : hoverFontsizeBlock.classList.add('disabled')
+	hoverFontSize.textContent = hoverFontSizeInput.value
+	visibleHoverBlockOutput()
+}
+const hoverShadowsArray = []
+hoverShadows.onchange = () =>{
+	hoverShadowBlock.textContent.length > 0 ? hoverShadowBlock.classList.remove('disabled') : hoverShadowBlock.classList.add('disabled')
+	if (hoverShadowInset.checked === true) {	
+		hoverShadowsArray[0] = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value} inset`
+		hoverBoxShadow.textContent = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value} inset`
+	}else{
+		hoverShadowsArray[0] = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value}`
+		hoverBoxShadow.textContent = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value}`
+	}
+	visibleHoverBlockOutput()
+}
+transformScaleInput.onchange = () =>{
+	transformScaleInput.value.length > 0 ? hoverTransformBlock.classList.remove('disabled') : hoverTransformBlock.classList.add('disabled')
+	hoverTransform.textContent = transformScaleInput.value
+	visibleHoverBlockOutput()
+}
+
+
 hoverToggle.onchange = () =>{
 	hoverToggle.checked ? hoverSection.classList.add('active') : hoverSection.classList.remove('active')
 	//hoverToggle.checked ? true : hoverClass.style.display = 'none'
