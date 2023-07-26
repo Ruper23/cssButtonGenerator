@@ -185,6 +185,141 @@ borderSettingsBlock.onchange = () => {
 }
 
 
+/*Shadow*/
+
+const buttonShadow = document.querySelector('.button__shadow')
+const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
+const buttonShadowX = document.querySelectorAll('.button__shadow-x')
+const shadowXOutput = document.querySelectorAll('.shadow__x-txt')
+const buttonShadowY = document.querySelectorAll('.button__shadow-y')
+const shadowYOutput = document.querySelectorAll('.shadow__y-txt')
+const buttonShadowBlur = document.querySelectorAll('.button__shadow-blur')
+const shadowBlurOutput = document.querySelectorAll('.shadow__blur-txt')
+const buttonShadowSpread = document.querySelectorAll('.button__shadow-spread')
+const shadowSpreadOutput = document.querySelectorAll('.shadow__spread-txt')
+const buttonShadowColor = document.querySelectorAll('.shadow__color')
+const buttonShadowInset = document.querySelectorAll('.button__shadow-inset')
+const shadowBlockOutput = document.querySelector('.shadow-block')
+const addShadow = document.querySelector('.add__shadow')
+const shadowDatasetC = document.querySelectorAll('.shadow__color')
+
+/*Индекс блока и всех элементов внутри него*/
+let newShadowCount = 0
+
+/*Add new shadow*/
+/*имена классов */
+const classesForShadow = {
+	shadowBlock: "button__shadow-block",
+	inputColor: "input__color",
+	shadowColor: "shadow__color",
+	shadowInset: "button__shadow-inset",
+	shadowX: "button__shadow-x",
+	shadowXTxt: "shadow__x-txt",
+	shadowY: "button__shadow-y",
+	shadowYTxt: "shadow__y-txt",
+	shadowBlur: "button__shadow-blur",
+	shadowBlurTxt: "shadow__blur-txt",
+	shadowSpread: "button__shadow-spread",
+	shadowSpreadTxt: "shadow__spread-txt",
+	showHide: "show-hide",
+	hide: "hide",
+	h4Title: "h4-title",
+
+}
+/*Создание нового блока с ползунками*/
+addShadow.onclick = () => {
+	const divMain = document.createElement('div')
+	const divColor = document.createElement('div')
+	const divX = document.createElement('div')
+	const divY = document.createElement('div')
+	const divBlur = document.createElement('div')
+	const divSpread = document.createElement('div')
+	const h4 = document.createElement('h4')
+	const inputColor = document.createElement('input')
+	const inputRangeX = document.createElement('input')
+	const inputRangeY = document.createElement('input')
+	const inputRangeBlur = document.createElement('input')
+	const inputRangeSpread = document.createElement('input')
+	const spanInset = document.createElement('span')
+	const spanX = document.createElement('span')
+	const spanY = document.createElement('span')
+	const spanBlur = document.createElement('span')
+	const spanSpread = document.createElement('span')
+	const inputCheckbox = document.createElement('input')
+	const hideBtn = document.createElement('button')
+
+	/*Индекс блока и всех элементов внутри него + 1*/
+	newShadowCount++
+
+	divMain.className = classesForShadow.shadowBlock
+	divMain.setAttribute("data-shadows", newShadowCount)
+	divMain.classList.add(classesForShadow.hide)
+	h4.textContent = "Color"
+	h4.className = classesForShadow.h4Title
+	/*color*/
+	divColor.className = classesForShadow.inputColor
+	inputColor.className = classesForShadow.shadowColor
+	inputColor.setAttribute("type", "color")
+	inputColor.setAttribute("data-shadows", newShadowCount)
+	divColor.append(inputColor)
+	/*inset*/
+	inputCheckbox.className = classesForShadow.shadowInset
+	inputCheckbox.setAttribute("data-shadows", newShadowCount)
+	inputCheckbox.setAttribute("type", "checkbox")
+	spanInset.textContent = "inset"
+	/*button show-hide*/
+	hideBtn.className = classesForShadow.showHide
+	hideBtn.setAttribute("data-hide", newShadowCount)
+	hideBtn.classList.add(classesForShadow.hide)
+	/*range x*/
+	inputRangeX.className = classesForShadow.shadowX
+	inputRangeX.setAttribute("type", "range")
+	inputRangeX.setAttribute("min", "-50")
+	inputRangeX.setAttribute("max", "50")
+	inputRangeX.setAttribute("value", "0")
+	inputRangeX.setAttribute("data-shadows", newShadowCount)
+	spanX.textContent = "0px"
+	spanX.className = classesForShadow.shadowXTxt
+	divX.append(inputRangeX, spanX)
+
+	/*range y*/
+	inputRangeY.className = classesForShadow.shadowY
+	inputRangeY.setAttribute("type", "range")
+	inputRangeY.setAttribute("min", "-50")
+	inputRangeY.setAttribute("max", "50")
+	inputRangeY.setAttribute("value", "0")
+	inputRangeY.setAttribute("data-shadows", newShadowCount)
+	spanY.textContent = "0px"
+	spanY.className = classesForShadow.shadowYTxt
+	divY.append(inputRangeY, spanY)
+
+	/*range blur*/
+	inputRangeBlur.className = classesForShadow.shadowBlur
+	inputRangeBlur.setAttribute("type", "range")
+	inputRangeBlur.setAttribute("min", "0")
+	inputRangeBlur.setAttribute("max", "100")
+	inputRangeBlur.setAttribute("value", "0")
+	inputRangeBlur.setAttribute("data-shadows", newShadowCount)
+	spanBlur.textContent = "0px"
+	spanBlur.className = classesForShadow.shadowBlurTxt
+	divBlur.append(inputRangeBlur, spanBlur)
+
+	/*range Spread*/
+	inputRangeSpread.className = classesForShadow.shadowSpread
+	inputRangeSpread.setAttribute("type", "range")
+	inputRangeSpread.setAttribute("min", "0")
+	inputRangeSpread.setAttribute("max", "20")
+	inputRangeSpread.setAttribute("value", "0")
+	inputRangeSpread.setAttribute("data-shadows", newShadowCount)
+	spanSpread.textContent = "0px"
+	spanSpread.className = classesForShadow.shadowSpreadTxt
+	divSpread.append(inputRangeSpread, spanSpread)
+
+	/*Новый блок теней*/
+	divMain.append(h4, divColor, inputCheckbox, hideBtn, spanInset, divX, divY, divBlur, divSpread)
+	buttonShadow.insertBefore(divMain, addShadow)
+}
+let btnShadows = ['0px 0px 0px 0px #000000']
 
 
 
