@@ -320,7 +320,42 @@ addShadow.onclick = () => {
 	buttonShadow.insertBefore(divMain, addShadow)
 }
 let btnShadows = ['0px 0px 0px 0px #000000']
+buttonShadow.onchange = () => {
+	const buttonShadowX = document.querySelectorAll('.button__shadow-x')
+	const buttonShadowY = document.querySelectorAll('.button__shadow-y')
+	const buttonShadowBlur = document.querySelectorAll('.button__shadow-blur')
+	const buttonShadowSpread = document.querySelectorAll('.button__shadow-spread')
+	const buttonShadowColor = document.querySelectorAll('.shadow__color')
+	const buttonShadowInset = document.querySelectorAll('.button__shadow-inset')
 
+	const spanX = document.querySelectorAll('.shadow__x-txt')
+	const spanY = document.querySelectorAll('.shadow__y-txt')
+	const spanBlur = document.querySelectorAll('.shadow__blur-txt')
+	const spanSpread = document.querySelectorAll('.shadow__spread-txt')
+
+	let lenghtOfshadows = buttonShadow.children.length - 2
+
+	const arrayOfShadows = []
+	for (let i = 0; i < lenghtOfshadows; i++) {
+		if (buttonShadowInset[i].checked) {
+			/*Запись в массив всех параметров тени из соответствующего блока*/
+			arrayOfShadows[i] = `${buttonShadowX[i].value}px ${buttonShadowY[i].value}px ${buttonShadowBlur[i].value}px ${buttonShadowSpread[i].value}px ${buttonShadowColor[i].value} inset`
+		} else {
+			arrayOfShadows[i] = `${buttonShadowX[i].value}px ${buttonShadowY[i].value}px ${buttonShadowBlur[i].value}px ${buttonShadowSpread[i].value}px ${buttonShadowColor[i].value}`
+		}
+
+		/*Запись стиля из массива к кнопке инлайново*/
+		buttonElement.style.boxShadow = arrayOfShadows
+		/*Запись стиля в блок стилей */
+		btnShadowX.textContent = arrayOfShadows.toString().split(',').join(', \n')
+		spanX[i].textContent = `${buttonShadowX[i].value}px`
+		spanY[i].textContent = `${buttonShadowY[i].value}px`
+		spanBlur[i].textContent = `${buttonShadowBlur[i].value}px`
+		spanSpread[i].textContent = `${buttonShadowSpread[i].value}px`
+		btnShadows = arrayOfShadows
+	}
+	shadowBlockOutput.style.display = "block"
+}
 
 
 /*HOVER*/
