@@ -1101,13 +1101,15 @@ h1 {
   margin: 5px 0;
 }
 
+.no-webp .show-hide{
+  background: url("../img/Arrow 1.png") 50%/contain no-repeat; }
+
 .show-hide {
   position: absolute;
   right: 0;
   top: 40px;
   width: 20px;
   height: 20px;
-  background-color: transparent;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   display: -webkit-box;
@@ -1234,3 +1236,5 @@ h1 {
   left: -2px;
   bottom: -2px;
 }
+
+.webp .show-hide{ background: url("../img/Arrow 1.png") 50%/contain no-repeat; }
