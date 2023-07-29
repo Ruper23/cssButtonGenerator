@@ -494,3 +494,27 @@ hoverToggle.onchange = () =>{
 	hoverToggle.checked ? hoverSection.classList.add('active') : hoverSection.classList.remove('active')
 	//hoverToggle.checked ? true : hoverClass.style.display = 'none'
 }
+
+
+/*Сброс ховера*/
+const hoverResetBtn = document.querySelector('.hover-reset')
+const hoverArchor = document.querySelectorAll('[data-archor]')
+const hoverValues = document.querySelectorAll('.hover-section input')
+
+const hoverValuesReset = () =>{
+	hoverClass.style.display = 'none'
+	hoverValues.forEach(elem => elem.value = '')
+	hoverArchor.forEach(elem => elem.classList.add('disabled'))
+	hoverShadowX.value = 0
+	hoverShadowY.value = 0
+	hoverShadowBlur.value = 0
+	hoverShadowSpread.value = 0
+	isHoverTextColorChange = false
+	isHoverBGChange = false
+	hoverShadowInset.checked = false
+	hoverShadowsArray[0] = ''
+}
+hoverResetBtn.onclick = () =>{
+	hoverValuesReset()
+}
+	let normalScale = 1
