@@ -518,3 +518,86 @@ hoverResetBtn.onclick = () =>{
 	hoverValuesReset()
 }
 	let normalScale = 1
+/*Классы состояния кнопки*/
+
+
+/*Обычное состояние кнопки заданное пользователем*/
+class Main {
+	constructor(color,width,height,fontSize,textColor,shadow,scale){
+		this.color = color
+		this.width = width
+		this.height = height
+		this.fontSize = fontSize
+		this.textColor = textColor
+		this.shadow = shadow
+		this.scale = scale
+
+	}
+	btnColor(){
+		if (!isHoverBGChange === true) {return}
+		buttonElement.style.backgroundColor = this.color
+	}
+	btnWidth() {
+		if (!hoverWidthInput.value.length > 0) {return}
+		buttonElement.style.width = `${this.width}px`
+	}
+	btnHeight() {
+		if (!hoverHeightInput.value.length > 0) {return}
+		buttonElement.style.height = `${this.height}px`
+	}
+	btnFontSize() {
+		if (!hoverFontSizeInput.value.length > 0) {return}
+		buttonElement.style.fontSize = `${this.fontSize}px`
+	}
+	btnTextColor() {
+		if (!isHoverTextColorChange === true) {return}
+		buttonElement.style.color = this.textColor
+	}
+	btnShadow() {
+		if (!hoverShadowsArray.length > 0) {return}
+		buttonElement.style.boxShadow = this.shadow
+	}
+	btnScale () {
+		if (!transformScaleInput.value.length > 0) {return}
+		buttonElement.style.transform = `scale(${this.scale})`
+	}
+}
+
+/*Состояние при наведении заданое пользователем*/
+class Hover extends Main{
+		constructor(color,width,height,fontSize,textColor,shadow,scale){
+		super()
+		this.color = color
+		this.width = width
+		this.height = height
+		this.fontSize = fontSize
+		this.textColor = textColor
+		this.shadow = shadow
+		this.scale = scale
+	}
+
+}
+
+let hoverState
+let normalState
+buttonElement.addEventListener('mouseenter', ()=>{
+	hoverState = new Hover (hoverBgcolorInput.value,hoverWidthInput.value,hoverHeightInput.value,hoverFontSizeInput.value,hoverTextColorInput.value,hoverShadowsArray,transformScaleInput.value)
+	if (!hoverToggle.checked) {return}
+	hoverState.btnWidth(hoverWidthInput.value)
+	hoverState.btnHeight(hoverHeightInput.value)
+	hoverState.btnColor(hoverBgcolorInput.value)
+	hoverState.btnFontSize(hoverFontSizeInput.value)
+	hoverState.btnTextColor(hoverTextColorInput.value)
+	hoverState.btnShadow(hoverShadowsArray)
+	hoverState.btnScale(transformScaleInput.value)
+})
+buttonElement.addEventListener('mouseleave', ()=>{
+	normalState = new Main (buttonColor.value,settingsWidth.value,settingsHeight.value,textFontSizeInput.value,textColorInput.value,btnShadows,normalScale)
+	normalState.btnWidth(settingsWidth.value)
+	normalState.btnHeight(settingsHeight.value)
+	normalState.btnColor(buttonColor.value)
+	normalState.btnFontSize(textFontSizeInput.value)
+	normalState.btnTextColor(textColorInput.value)
+	normalState.btnShadow(btnShadows)
+	normalState.btnScale(normalScale)
+})
