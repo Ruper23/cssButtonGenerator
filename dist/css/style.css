@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: BebasNeue;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/BebasNeue-Regular.woff2") format("woff2"), url("../fonts/BebasNeue-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -35,16 +35,16 @@
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Montserrat;
+  font-family: BebasNeue;
   font-display: swap;
-  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/BebasNeue-Regular.woff2") format("woff2"), url("../fonts/BebasNeue-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -59,24 +59,16 @@
 @font-face {
   font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Montserrat;
-  font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: NotoSans;
   font-display: swap;
-  src: url("../fonts/NotoSans-Bold.woff2") format("woff2"), url("../fonts/NotoSans-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/NotoSans-Black.woff2") format("woff2"), url("../fonts/NotoSans-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -89,10 +81,10 @@
 }
 
 @font-face {
-  font-family: NotoSans;
+  font-family: Montserrat;
   font-display: swap;
-  src: url("../fonts/NotoSans-ExtraBold.woff2") format("woff2"), url("../fonts/NotoSans-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -107,16 +99,16 @@
 @font-face {
   font-family: NotoSans;
   font-display: swap;
-  src: url("../fonts/NotoSans-Light.woff2") format("woff2"), url("../fonts/NotoSans-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/NotoSans-Bold.woff2") format("woff2"), url("../fonts/NotoSans-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: NotoSans;
   font-display: swap;
-  src: url("../fonts/NotoSans-Medium.woff2") format("woff2"), url("../fonts/NotoSans-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/NotoSans-ExtraBold.woff2") format("woff2"), url("../fonts/NotoSans-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -131,8 +123,24 @@
 @font-face {
   font-family: NotoSans;
   font-display: swap;
+  src: url("../fonts/NotoSans-Medium.woff2") format("woff2"), url("../fonts/NotoSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: NotoSans;
+  font-display: swap;
   src: url("../fonts/NotoSans-SemiBold.woff2") format("woff2"), url("../fonts/NotoSans-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -147,8 +155,16 @@
 @font-face {
   font-family: NotoSans;
   font-display: swap;
-  src: url("../fonts/NotoSans-Black.woff2") format("woff2"), url("../fonts/NotoSans-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/NotoSans-Light.woff2") format("woff2"), url("../fonts/NotoSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-display: swap;
+  src: url("../fonts/OpenSans-Medium.woff2") format("woff2"), url("../fonts/OpenSans-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -163,8 +179,8 @@
 @font-face {
   font-family: OpenSans;
   font-display: swap;
-  src: url("../fonts/OpenSans-Medium.woff2") format("woff2"), url("../fonts/OpenSans-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -185,22 +201,6 @@
 }
 
 @font-face {
-  font-family: OpenSans;
-  font-display: swap;
-  src: url("../fonts/OpenSans-SemiBold.woff2") format("woff2"), url("../fonts/OpenSans-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-display: swap;
-  src: url("../fonts/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSans-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Oswald;
   font-display: swap;
   src: url("../fonts/Oswald-ExtraLight.woff2") format("woff2"), url("../fonts/Oswald-ExtraLight.woff") format("woff");
@@ -211,16 +211,16 @@
 @font-face {
   font-family: Oswald;
   font-display: swap;
-  src: url("../fonts/Oswald-Bold.woff2") format("woff2"), url("../fonts/Oswald-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Oswald-Medium.woff2") format("woff2"), url("../fonts/Oswald-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Oswald;
   font-display: swap;
-  src: url("../fonts/Oswald-Light.woff2") format("woff2"), url("../fonts/Oswald-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Oswald-Bold.woff2") format("woff2"), url("../fonts/Oswald-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -241,18 +241,26 @@
 }
 
 @font-face {
-  font-family: Oswald;
+  font-family: PTSerif;
   font-display: swap;
-  src: url("../fonts/Oswald-Medium.woff2") format("woff2"), url("../fonts/Oswald-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/PTSerif-Regular.woff2") format("woff2"), url("../fonts/PTSerif-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: PTSerif;
   font-display: swap;
-  src: url("../fonts/PTSerif-Regular.woff2") format("woff2"), url("../fonts/PTSerif-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/PTSerif-Bold.woff2") format("woff2"), url("../fonts/PTSerif-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-display: swap;
+  src: url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -267,16 +275,16 @@
 @font-face {
   font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Oswald;
   font-display: swap;
-  src: url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/Oswald-Light.woff2") format("woff2"), url("../fonts/Oswald-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -285,14 +293,6 @@
   font-display: swap;
   src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Roboto;
-  font-display: swap;
-  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -313,10 +313,10 @@
 }
 
 @font-face {
-  font-family: PTSerif;
+  font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/PTSerif-Bold.woff2") format("woff2"), url("../fonts/PTSerif-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -345,17 +345,17 @@
 }
 
 @font-face {
-  font-family: Roboto;
+  font-family: Ubuntu;
   font-display: swap;
-  src: url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Ubuntu;
+  font-family: Roboto;
   font-display: swap;
-  src: url("../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu-Bold.woff") format("woff");
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -448,7 +448,7 @@ select {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,6 +468,7 @@ select {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  height: 100%;
 }
 
 .link {
@@ -960,9 +961,6 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
 }
 
 .element__section {
@@ -1006,7 +1004,7 @@ h1 {
   border-radius: 15px;
   background: #31322c;
   width: 80%;
-  margin: 0 0 30px 0;
+  margin: 40px 0 100px 0;
 }
 
 .element__settings {
