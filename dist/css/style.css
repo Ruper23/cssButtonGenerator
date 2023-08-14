@@ -422,8 +422,8 @@ input {
   border: none;
 }
 
-input:focus,
-button:focus {
+input:target,
+button:target {
   outline-color: #2bee30;
   -webkit-box-shadow: 0 0 0 1px #2bee30;
           box-shadow: 0 0 0 1px #2bee30;

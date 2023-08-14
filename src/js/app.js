@@ -362,11 +362,10 @@ buttonShadow.onclick = e =>{
 	const showHideBtnAll = document.querySelectorAll('.show-hide')
 	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
 	let currTarget = e.target.dataset.hide
+	if(!currTarget) return
 	if(showHideBtnAll){
 	showHideBtnAll[currTarget].classList.toggle('hide')
 	buttonShadowBlock[currTarget].classList.toggle('hide')
-	}else{
-		e.preventDefault()
 	}
 }
 
