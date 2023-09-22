@@ -487,6 +487,7 @@ const hoverBgcolorInput = document.querySelector('.hover__bgcolor-input')
 const hoverTextColorInput = document.querySelector('.hover__textcolor-input')
 const hoverFontSizeInput = document.querySelector('.hover__fontsize-input')
 const transformScaleInput = document.querySelector('.transform__scale-input')
+const hoverShadowsSettings = document.querySelector('.hover__shadow-settings')
 const hoverShadows = document.querySelector('.shadow-axes')
 const hoverShadowInset = document.querySelector('.shadow-inset')
 const hoverShadowX = document.querySelector('.hover__shadow-x')
@@ -571,7 +572,7 @@ hoverFontSizeInput.onchange = () =>{
 	visibleHoverBlockOutput()
 }
 const hoverShadowsArray = []
-hoverShadows.onchange = () =>{
+hoverShadowsSettings.onchange = () =>{
 	hoverShadowBlock.textContent.length > 0 ? hoverShadowBlock.classList.remove('disabled') : hoverShadowBlock.classList.add('disabled')
 	if (hoverShadowInset.checked === true) {	
 		hoverShadowsArray[0] = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value} inset`
