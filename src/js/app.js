@@ -49,10 +49,110 @@ const textFontWeight = document.querySelector('.text-fontweight')
 
 
 /*font-family*/
+/*Массив доступных шрифтов*/
+const fonts = [
+	{
+		family : "BebasNeue",
+		weight : [200,400,600,800]
+	},
+	{
+		family : "Montserrat",
+		weight : [100,200,300,400,500,600,700,800,900]
+	},
+	{
+		family : "NotoSans",
+		weight : [400,700]
+	},
+	{
+		family : "OpenSans",
+		weight : [100,800,900]
+	},
+	{
+		family : "Oswald",
+		weight : [100,800,900]
+	},
+	{
+		family : "PTSerif",
+		weight : [100,800,900]
+	},
+	{
+		family : "Roboto",
+		weight : [100,800,900]
+	},
+	{
+		family : "Raleway",
+		weight : [100,800,900]
+	},
+	{
+		family : "Rubik",
+		weight : [100,800,900]
+	},
+	{
+		family : "Ubuntu",
+		weight : [100,800,900]
+	},
+]
+
+	/*Создание списка шривтов в меню выбора*/
+const fontsList = () => {
+	fonts.map(font => {
+		const optionFontFamily = document.createElement('option')
+		optionFontFamily.setAttribute('value' , '')
+		fontSelect.append(optionFontFamily)
+		optionFontFamily.value = font.family
+		optionFontFamily.textContent = font.family
+	})
+	let item = fonts[0].weight
+		item.map(i => {
+			const optionFontWeight = document.createElement('option')
+			optionFontWeight.setAttribute('value' , '')
+			optionFontWeight.className = "fontweight"
+			weightSelect.append(optionFontWeight)
+			optionFontWeight.value = i
+			optionFontWeight.textContent = i
+		})
+}
+fontsList()
+
+let list
+let indexOfFont = 0
+/*Функция очистки списка толщины шрифта*/
+const clearWeightList = () => {
+	const optionFontWeightClass = document.querySelectorAll('.fontweight')
+	for (let i = 0; i < fonts[indexOfFont].weight.length; i++){
+		weightSelect.remove(optionFontWeightClass[i])
+	}
+}
+/*Функция создания списка толщины шрифта*/
+const weightListWright = (list) => {
+	list.map(item => {
+			const optionFontWeight = document.createElement('option')
+			optionFontWeight.setAttribute('value' , '')
+			optionFontWeight.className = "fontweight"
+			weightSelect.append(optionFontWeight)
+			optionFontWeight.value = item
+			optionFontWeight.textContent = item
+		})
+}
+/*Функция выбора шрифта со списком толщины*/
+const fontsCurrWeight = () => {
+	/*очистка предыдущего списка*/
+	clearWeightList()
+	/*поиск обьекта в массиве по названию шрифта*/
+	let findCurrFont = fonts.find(font => font.family === fontSelect.value)
+	/*получение индекса обьекта из массива, по названию шрифта*/
+	indexOfFont = fonts.indexOf(findCurrFont, 0)
+	/*определение массива значений толщины, по названию шрифта*/
+	list = fonts[indexOfFont].weight
+	/*создаем новый список толщин по выбранному шрифту*/
+	weightListWright(list)
+}
+/*Событие по изменению выбора элемента из списка*/
 fontSelect.onchange = () =>{
 	textFontFamily.classList.remove('disabled')
 	buttonElement.style.fontFamily = fontSelect.value
 	btnFontFamily.textContent = `'${fontSelect.value}'`
+	fontsCurrWeight()
 }
 
 /*font-size*/
