@@ -1,6 +1,6 @@
 @import "fonts";
 // ###################################################
-$container: clamp(320px,100%,1440px);
+$container: 940px;
 $color_black: #000000;
 $color_white: #ffffff;
 $main_margin: 50px;
@@ -14,10 +14,10 @@ $h4:24px;
 $p:16px;
 $maxWidth: 1440;
 /* console log  */
-// *{
-//   box-sizing: border-box;
-//   background: rgb(0 100 0 / 0.1) !important;
-// }
+/* *{
+  box-sizing: border-box;
+  background: rgb(0 100 0 / 0.1) !important;
+} */
 // ###################################################
 /* Миксины */
 @mixin adaptiv-font($pcSize, $mobSize,$lineHeightMax,$lineHeightMin) {
@@ -44,7 +44,7 @@ $maxWidth: 1440;
 }
 html,
 body {
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -112,7 +112,7 @@ input[type="number"],input[type="text"],select{
   background: #bfbfbf;
 }
 .container{
-  width: $container;
+  min-width: $container;
   margin: 0 auto;
 }
 .main{

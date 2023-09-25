@@ -208,13 +208,18 @@
           <div class="element__settings">
             <div class="button__shadow section">
               <h3 class="h3-title">Box-shadow</h3>
-              <div class="button__shadow-block" data-shadows='0'>
+              <div class="shadow__tabs">
+                <div class="tab active" data-shadows="0">
+                  <div class="tab__color"></div>
+                </div>
+              </div>
+              <div class="button__shadow-block active" data-shadows='0'>
                 <h4 class="h4-title">Color</h4>
                 <div class="input__color">
                   <input type="color" class="shadow__color" data-shadows="0">
                 </div>
                 <input type="checkbox" class="button__shadow-inset" data-shadows="0"><span>inset</span>
-                <button class="show-hide" data-hide="0">
+                <!-- <button class="show-hide" data-hide="0"> -->
                 </button>
                 <div>
                   <input type="range" class="button__shadow-x range" min="-50" max="50" value="0" data-shadows="0">
