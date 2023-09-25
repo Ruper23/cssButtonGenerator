@@ -53,7 +53,7 @@ const textFontWeight = document.querySelector('.text-fontweight')
 const fonts = [
 	{
 		family : "BebasNeue",
-		weight : [200,400,600,800]
+		weight : [400]
 	},
 	{
 		family : "Montserrat",
@@ -61,35 +61,35 @@ const fonts = [
 	},
 	{
 		family : "NotoSans",
-		weight : [400,700]
+		weight : [100,200,300,400,500,600,700,800,900]
 	},
 	{
 		family : "OpenSans",
-		weight : [100,800,900]
+		weight : [300,400,500,600,700,800]
 	},
 	{
 		family : "Oswald",
-		weight : [100,800,900]
+		weight : [200,300,400,500,600,700]
 	},
 	{
 		family : "PTSerif",
-		weight : [100,800,900]
+		weight : [400,700]
 	},
 	{
 		family : "Roboto",
-		weight : [100,800,900]
+		weight : [100,300,400,500,700,900]
 	},
 	{
 		family : "Raleway",
-		weight : [100,800,900]
+		weight : [400]
 	},
 	{
 		family : "Rubik",
-		weight : [100,800,900]
+		weight : [300,400,500,600,700,800,900]
 	},
 	{
 		family : "Ubuntu",
-		weight : [100,800,900]
+		weight : [300,400,500,700]
 	},
 ]
 
@@ -303,6 +303,8 @@ const shadowBlockOutput = document.querySelector('.shadow-block')
 const addShadow = document.querySelector('.add__shadow')
 const shadowDatasetC = document.querySelectorAll('.shadow__color')
 
+const shadowTabs = document.querySelector('.shadow__tabs')
+
 /*Индекс блока и всех элементов внутри него*/
 let newShadowCount = 0
 
@@ -324,7 +326,8 @@ const classesForShadow = {
 	showHide: "show-hide",
 	hide: "hide",
 	h4Title: "h4-title",
-
+	tab: "tab",
+	tabColor: "tab__color",
 }
 /*Создание нового блока с ползунками*/
 addShadow.onclick = () => {
@@ -348,8 +351,17 @@ addShadow.onclick = () => {
 	const inputCheckbox = document.createElement('input')
 	const hideBtn = document.createElement('button')
 
+	const divTab = document.createElement('div')
+	const divTabColor = document.createElement('div')
+
 	/*Индекс блока и всех элементов внутри него + 1*/
 	newShadowCount++
+/* tab */
+	divTab.className = classesForShadow.tab
+	divTab.setAttribute("data-shadows", newShadowCount)
+	divTabColor.className = classesForShadow.tabColor
+	divTab.append(divTabColor)
+	shadowTabs.append(divTab)
 
 	divMain.className = classesForShadow.shadowBlock
 	divMain.setAttribute("data-shadows", newShadowCount)
@@ -418,7 +430,31 @@ addShadow.onclick = () => {
 	/*Новый блок теней*/
 	divMain.append(h4, divColor, inputCheckbox, hideBtn, spanInset, divX, divY, divBlur, divSpread)
 	buttonShadow.insertBefore(divMain, addShadow)
+
+	/*Фокус на новую вкладку тени*/
+	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
+	const tab = document.querySelectorAll('.tab')
+	activeTarget(buttonShadowBlock,newShadowCount)
+	activeTarget(tab,newShadowCount)
 }
+/*функция на переключение фокуса*/
+const activeTarget = (tab,count) =>{
+	tab.forEach(el => el.classList.remove('active'))
+	tab[count].classList.add('active')
+}
+/*фокус на блок*/
+const switchShadowWithTab = (tabCurr) => {
+	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
+	activeTarget(buttonShadowBlock,tabCurr)
+}
+/*фокус на таб*/
+shadowTabs.onclick = (e) => {
+	const tab = document.querySelectorAll('.tab')
+	let tabCurr = e.target.dataset.shadows
+	activeTarget(tab,tabCurr)
+	switchShadowWithTab(tabCurr)
+}
+
 let btnShadows = ['0px 0px 0px 0px #000000']
 buttonShadow.onchange = () => {
 	const buttonShadowX = document.querySelectorAll('.button__shadow-x')
@@ -433,10 +469,13 @@ buttonShadow.onchange = () => {
 	const spanBlur = document.querySelectorAll('.shadow__blur-txt')
 	const spanSpread = document.querySelectorAll('.shadow__spread-txt')
 
-	let lenghtOfshadows = buttonShadow.children.length - 2
+	const tabColor = document.querySelectorAll('.tab__color')
+
+	let lenghtOfshadows = buttonShadow.children.length - 3
 
 	const arrayOfShadows = []
 	for (let i = 0; i < lenghtOfshadows; i++) {
+		tabColor[i].style.background = buttonShadowColor[i].value
 		if (buttonShadowInset[i].checked) {
 			/*Запись в массив всех параметров тени из соответствующего блока*/
 			arrayOfShadows[i] = `${buttonShadowX[i].value}px ${buttonShadowY[i].value}px ${buttonShadowBlur[i].value}px ${buttonShadowSpread[i].value}px ${buttonShadowColor[i].value} inset`
@@ -458,7 +497,7 @@ buttonShadow.onchange = () => {
 }
 
 /*Show hide func*/
-buttonShadow.onclick = e =>{
+/* buttonShadow.onclick = e =>{
 	const showHideBtnAll = document.querySelectorAll('.show-hide')
 	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
 	let currTarget = e.target.dataset.hide
@@ -467,6 +506,20 @@ buttonShadow.onclick = e =>{
 	showHideBtnAll[currTarget].classList.toggle('hide')
 	buttonShadowBlock[currTarget].classList.toggle('hide')
 	}
+} */
+
+buttonShadow.onclick = e =>{
+	const showHideBtnAll = document.querySelectorAll('.show-hide')
+	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
+	const tab = document.querySelectorAll('.tab')
+	let currTarget = e.target.dataset.hide
+		if (currTarget) {	
+			buttonShadow.removeChild(buttonShadowBlock[currTarget])
+			shadowTabs.removeChild(tab[currTarget])
+			let prevBlock = currTarget - 1
+			activeTarget(buttonShadowBlock,prevBlock)
+			activeTarget(tab,prevBlock)
+		}
 }
 
 /*HOVER*/
