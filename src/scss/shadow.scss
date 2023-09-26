@@ -6,7 +6,6 @@
 	position: relative;
 }
 .button__shadow-block {
-	border-bottom: 2px solid #4f5150;
 	position: relative;
 	transition: all 0.3s ease;
 	display: none;
@@ -18,7 +17,7 @@
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-	margin: 5px auto;
+	margin: 15px auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +35,11 @@
 	background-color: #4f9af7;
 	box-shadow: 0 0 2px 1px #80f479, 0 0 2px 1px #e9fde8 inset;
 	text-shadow: 0 0 3px #fff;
+}
+.add__shadow.inactive{
+	cursor: not-allowed;
+	opacity: 0.3;
+	pointer-events: none;
 }
 /*.range{
 	width: 80%;
@@ -60,7 +64,9 @@
 .show-hide:hover{
 	opacity: 1;
 }
-
+button[data-hide='0']{
+	display:none;
+}
 .shadow__x-txt,
 .shadow__y-txt,
 .shadow__blur-txt,
