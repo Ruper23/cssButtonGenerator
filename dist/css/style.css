@@ -449,7 +449,7 @@ input[type=range]:hover {
 input[type=number],
 input[type=text],
 select {
-  width: 50px;
+  width: 60px;
   background-color: transparent;
   border-bottom: 1px solid #676767;
   margin: 5px 0;
@@ -1059,7 +1059,6 @@ h1 {
 }
 
 .button__shadow-block {
-  border-bottom: 2px solid #4f5150;
   position: relative;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -1074,7 +1073,7 @@ h1 {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin: 5px auto;
+  margin: 15px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1104,6 +1103,12 @@ h1 {
   -webkit-box-shadow: 0 0 2px 1px #80f479, 0 0 2px 1px #e9fde8 inset;
           box-shadow: 0 0 2px 1px #80f479, 0 0 2px 1px #e9fde8 inset;
   text-shadow: 0 0 3px #fff;
+}
+
+.add__shadow.inactive {
+  cursor: not-allowed;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 /*.range{
@@ -1142,6 +1147,10 @@ h1 {
 
 .show-hide:hover {
   opacity: 1;
+}
+
+button[data-hide="0"] {
+  display: none;
 }
 
 .shadow__x-txt,

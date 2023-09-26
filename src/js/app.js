@@ -301,15 +301,15 @@ const buttonShadowColor = document.querySelectorAll('.shadow__color')
 const buttonShadowInset = document.querySelectorAll('.button__shadow-inset')
 const shadowBlockOutput = document.querySelector('.shadow-block')
 const addShadow = document.querySelector('.add__shadow')
-const shadowDatasetC = document.querySelectorAll('.shadow__color')
+/* const shadowDatasetC = document.querySelectorAll('.shadow__color') */
 
 const shadowTabs = document.querySelector('.shadow__tabs')
 
 /*Индекс блока и всех элементов внутри него*/
 let newShadowCount = 0
-
+let btnShadows = ['0px 0px 0px 0px #000000']
 /*Add new shadow*/
-/*имена классов */
+/*имена CSS классов */
 const classesForShadow = {
 	shadowBlock: "button__shadow-block",
 	inputColor: "input__color",
@@ -328,6 +328,7 @@ const classesForShadow = {
 	h4Title: "h4-title",
 	tab: "tab",
 	tabColor: "tab__color",
+
 }
 /*Создание нового блока с ползунками*/
 addShadow.onclick = () => {
@@ -354,14 +355,15 @@ addShadow.onclick = () => {
 	const divTab = document.createElement('div')
 	const divTabColor = document.createElement('div')
 
-	/*Индекс блока и всех элементов внутри него + 1*/
 	newShadowCount++
-/* tab */
+
 	divTab.className = classesForShadow.tab
 	divTab.setAttribute("data-shadows", newShadowCount)
 	divTabColor.className = classesForShadow.tabColor
 	divTab.append(divTabColor)
 	shadowTabs.append(divTab)
+
+	/*Индекс блока и всех элементов внутри него + 1*/
 
 	divMain.className = classesForShadow.shadowBlock
 	divMain.setAttribute("data-shadows", newShadowCount)
@@ -430,13 +432,17 @@ addShadow.onclick = () => {
 	/*Новый блок теней*/
 	divMain.append(h4, divColor, inputCheckbox, hideBtn, spanInset, divX, divY, divBlur, divSpread)
 	buttonShadow.insertBefore(divMain, addShadow)
-
+	
 	/*Фокус на новую вкладку тени*/
 	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
 	const tab = document.querySelectorAll('.tab')
 	activeTarget(buttonShadowBlock,newShadowCount)
 	activeTarget(tab,newShadowCount)
+	
+	newShadowCount > 13 ? addShadow.classList.add('inactive') : addShadow.classList.remove('inactive') 
+	console.log(newShadowCount);
 }
+
 /*функция на переключение фокуса*/
 const activeTarget = (tab,count) =>{
 	tab.forEach(el => el.classList.remove('active'))
@@ -450,13 +456,28 @@ const switchShadowWithTab = (tabCurr) => {
 /*фокус на таб*/
 shadowTabs.onclick = (e) => {
 	const tab = document.querySelectorAll('.tab')
+	const showHideBtnAll = document.querySelectorAll('.show-hide')
+	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
+	refreshIndex(showHideBtnAll,tab,buttonShadowBlock)
+
 	let tabCurr = e.target.dataset.shadows
 	activeTarget(tab,tabCurr)
 	switchShadowWithTab(tabCurr)
+
+}
+/*переиндексация оставшихся элементов*/
+const refreshIndex = (showHideBtnAll,tab,buttonShadowBlock) =>{
+	for (let i = 0; i < tab.length; i++) {
+		tab[i].dataset.shadows = i
+		buttonShadowBlock[i].dataset.shadows = i
+		showHideBtnAll[i].dataset.hide = i
+	}				
+}
+const refreshArrayOfShadows = (btnShadows,currIndex) =>{
+	btnShadows.splice(currIndex,1)
 }
 
-let btnShadows = ['0px 0px 0px 0px #000000']
-buttonShadow.onchange = () => {
+const battonShadowChange = () =>{
 	const buttonShadowX = document.querySelectorAll('.button__shadow-x')
 	const buttonShadowY = document.querySelectorAll('.button__shadow-y')
 	const buttonShadowBlur = document.querySelectorAll('.button__shadow-blur')
@@ -495,32 +516,32 @@ buttonShadow.onchange = () => {
 	}
 	shadowBlockOutput.style.display = "block"
 }
+buttonShadow.onchange = () => {
+	battonShadowChange()
+}
 
-/*Show hide func*/
-/* buttonShadow.onclick = e =>{
-	const showHideBtnAll = document.querySelectorAll('.show-hide')
-	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
-	let currTarget = e.target.dataset.hide
-	if(!currTarget) return
-	if(showHideBtnAll){
-	showHideBtnAll[currTarget].classList.toggle('hide')
-	buttonShadowBlock[currTarget].classList.toggle('hide')
-	}
-} */
-
+/*удаление вкладки с тенью*/
 buttonShadow.onclick = e =>{
-	const showHideBtnAll = document.querySelectorAll('.show-hide')
 	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
 	const tab = document.querySelectorAll('.tab')
 	let currTarget = e.target.dataset.hide
 		if (currTarget) {	
+			addShadow.classList.remove('inactive')
+			/*удаление вкладки*/
+			let prevBlock = currTarget - 1
 			buttonShadow.removeChild(buttonShadowBlock[currTarget])
 			shadowTabs.removeChild(tab[currTarget])
-			let prevBlock = currTarget - 1
+			/*прехеод на предыдущую вкладку*/
 			activeTarget(buttonShadowBlock,prevBlock)
 			activeTarget(tab,prevBlock)
+			newShadowCount--
+			/*обновление индексов*/
+			refreshArrayOfShadows(btnShadows,currTarget)
+			/*обновление массива теней*/
+			battonShadowChange()	
 		}
 }
+
 
 /*HOVER*/
 
