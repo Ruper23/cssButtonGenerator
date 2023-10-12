@@ -1,6 +1,6 @@
 import * as webpCheck from "./modules/webpcheck.js"
 webpCheck.isWebp()
-
+import {fonts} from "./modules/fonts/fontsFamily.js"
 
 
 const elementBg = document.querySelector('.element__section')
@@ -49,49 +49,7 @@ const textFontWeight = document.querySelector('.text-fontweight')
 
 
 /*font-family*/
-/*Массив доступных шрифтов*/
-const fonts = [
-	{
-		family : "BebasNeue",
-		weight : [400]
-	},
-	{
-		family : "Montserrat",
-		weight : [100,200,300,400,500,600,700,800,900]
-	},
-	{
-		family : "NotoSans",
-		weight : [100,200,300,400,500,600,700,800,900]
-	},
-	{
-		family : "OpenSans",
-		weight : [300,400,500,600,700,800]
-	},
-	{
-		family : "Oswald",
-		weight : [200,300,400,500,600,700]
-	},
-	{
-		family : "PTSerif",
-		weight : [400,700]
-	},
-	{
-		family : "Roboto",
-		weight : [100,300,400,500,700,900]
-	},
-	{
-		family : "Raleway",
-		weight : [400]
-	},
-	{
-		family : "Rubik",
-		weight : [300,400,500,600,700,800,900]
-	},
-	{
-		family : "Ubuntu",
-		weight : [300,400,500,700]
-	},
-]
+
 
 	/*Создание списка шривтов в меню выбора*/
 const fontsList = () => {
@@ -133,6 +91,8 @@ const weightListWright = (list) => {
 			optionFontWeight.value = item
 			optionFontWeight.textContent = item
 		})
+		buttonElement.style.fontWeight = list[0]
+		btnFontWeight.textContent = list[0]
 }
 /*Функция выбора шрифта со списком толщины*/
 const fontsCurrWeight = () => {
@@ -156,30 +116,30 @@ fontSelect.onchange = () =>{
 }
 
 /*font-size*/
-textFontSizeInput.onchange = () =>{
+textFontSizeInput.addEventListener('change', () =>{
 	textBlock.classList.remove('disabled')
 	buttonElement.style.fontSize = `${textFontSizeInput.value}px`
 	btnFontSize.textContent = textFontSizeInput.value
-}
+})
 /*font-wieght*/
-weightSelect.onchange = () =>{
+weightSelect.addEventListener('change', () =>{
 	textFontWeight.classList.remove('disabled')
 	buttonElement.style.fontWeight = weightSelect.value
 	btnFontWeight.textContent = weightSelect.value
-}
+})
 
 /*button text*/
-settingsTextInput.onchange = () => {
+settingsTextInput.addEventListener('change', () => {
 	buttonElement.textContent = settingsTextInput.value
-}
+})
 
 /*text color*/
-textColorInput.onchange = () => {
+textColorInput.addEventListener('change', () => {
 	textColor.classList.remove('disabled')
 	buttonElement.style.color = textColorInput.value
 	textColorOutput.value = textColorInput.value
 	btnFontColor.textContent = textColorInput.value
-}
+})
 /*button color*/
 
 const buttonColorBlock = document.querySelector('.button')
@@ -201,16 +161,16 @@ const transparentCheked = () =>{
 	}
 }
 
-buttonColorBlock.onchange = () => {
+buttonColorBlock.addEventListener('change', () => {
 	btnColorSpan.textContent = buttonColor.value
 	colorSetFunc(buttonElement,buttonColor,buttonColorOutput)
 	transparentCheked()
-}
-buttonColorOutput.onchange = () =>{
+})
+buttonColorOutput.addEventListener('change', () =>{
 	colorSetFunc(buttonElement,buttonColorOutput,buttonColor)
 	btnColorSpan.textContent = buttonColor.value
 	transparentCheked()
-}
+})
 /*Width & Height*/
 
 const settingsWidth = document.querySelector('#settings__width-input')
@@ -218,12 +178,12 @@ const settingsHeight = document.querySelector('#settings__height-input')
 const settingsMainProperty = document.querySelector('.settings__main-width')
 
 
-settingsMainProperty.onchange = () => {
+settingsMainProperty.addEventListener('change', () => {
 	buttonElement.style.width = `${settingsWidth.value}px`
 	buttonElement.style.height = `${settingsHeight.value}px`
 	btnWidthSpan.textContent = settingsWidth.value
 	btnHeightSpan.textContent = settingsHeight.value
-}
+})
 
 
 /*BORDER*/
@@ -278,11 +238,11 @@ const borderSettingsChange = () => {
 	}
 }
 
-borderSettingsBlock.onchange = () => {
+borderSettingsBlock.addEventListener('change', () => {
 	borderTypeChange()
 	borderSettingsChange()
 	borderRadiusChange()
-}
+})
 
 
 /*Shadow*/
@@ -331,7 +291,7 @@ const classesForShadow = {
 
 }
 /*Создание нового блока с ползунками*/
-addShadow.onclick = () => {
+addShadow.addEventListener('click', () => {
 	const divMain = document.createElement('div')
 	const divColor = document.createElement('div')
 	const divX = document.createElement('div')
@@ -442,7 +402,7 @@ addShadow.onclick = () => {
 	newShadowCount > 13 ? addShadow.classList.add('inactive') : addShadow.classList.remove('inactive') 
 	console.log(newShadowCount);
 }
-
+)
 /*функция на переключение фокуса*/
 const activeTarget = (tab,count) =>{
 	tab.forEach(el => el.classList.remove('active'))
@@ -454,7 +414,7 @@ const switchShadowWithTab = (tabCurr) => {
 	activeTarget(buttonShadowBlock,tabCurr)
 }
 /*фокус на таб*/
-shadowTabs.onclick = (e) => {
+shadowTabs.addEventListener('click',(e) => {
 	const tab = document.querySelectorAll('.tab')
 	const showHideBtnAll = document.querySelectorAll('.show-hide')
 	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
@@ -464,7 +424,7 @@ shadowTabs.onclick = (e) => {
 	activeTarget(tab,tabCurr)
 	switchShadowWithTab(tabCurr)
 
-}
+})
 /*переиндексация оставшихся элементов*/
 const refreshIndex = (showHideBtnAll,tab,buttonShadowBlock) =>{
 	for (let i = 0; i < tab.length; i++) {
@@ -516,12 +476,12 @@ const battonShadowChange = () =>{
 	}
 	shadowBlockOutput.style.display = "block"
 }
-buttonShadow.onchange = () => {
+buttonShadow.addEventListener('change', () => {
 	battonShadowChange()
-}
+})
 
 /*удаление вкладки с тенью*/
-buttonShadow.onclick = e =>{
+buttonShadow.addEventListener('click', (e) =>{
 	const buttonShadowBlock = document.querySelectorAll('.button__shadow-block')
 	const tab = document.querySelectorAll('.tab')
 	let currTarget = e.target.dataset.hide
@@ -540,7 +500,7 @@ buttonShadow.onclick = e =>{
 			/*обновление массива теней*/
 			battonShadowChange()	
 		}
-}
+})
 
 
 /*HOVER*/
@@ -595,12 +555,12 @@ const hoverTransform = document.querySelector('.hover__transform-output')
 let isHoverBGChange = false
 let isHoverTextColorChange = false
 /* Открытие/закрытие окна с ховер настройками*/
-hoverClose.onclick = () =>{
+hoverClose.addEventListener('click', () =>{
 	hoverSection.classList.remove('active')
-}
-hoverMenuBtn.onclick = () => {
+})
+hoverMenuBtn.addEventListener('click', () => {
 	hoverSection.classList.toggle('active')
-}
+})
 const visibleHoverBlockOutput = () =>{
 	if (hoverWidthInput.value.length > 0 || hoverHeightInput.value.length > 0 || hoverBgcolorInput.value.length > 0 || hoverTransitionInput.value.length > 0 || hoverFontSizeInput.value.length > 0 || hoverTextColorInput.value.length > 0 ) {
 		hoverClass.style.display = 'flex'
@@ -609,44 +569,44 @@ const visibleHoverBlockOutput = () =>{
 	}
 }
 /**/
-hoverWidthInput.onchange = () =>{
+hoverWidthInput.addEventListener('change', () =>{
 	hoverWidthInput.value.length > 0 ? hoverWidthBlock.classList.remove('disabled') : hoverWidthBlock.classList.add('disabled')
 	hoverWidth.textContent = hoverWidthInput.value
 	visibleHoverBlockOutput()
-}
-hoverHeightInput.onchange = () =>{
+})
+hoverHeightInput.addEventListener('change', () =>{
 	hoverHeightInput.value.length > 0 ? hoverHeightBlock.classList.remove('disabled') : hoverHeightBlock.classList.add('disabled')	
 	hoverHeight.textContent = hoverHeightInput.value
 	visibleHoverBlockOutput()
-}
-hoverBgcolorInput.onchange = () =>{
+})
+hoverBgcolorInput.addEventListener('change', () =>{
 	hoverBgcolorInput.value.length > 0 ? hoverBgColorBlock.classList.remove('disabled') : hoverBgColorBlock.classList.add('disabled')
 	hoverBgColor.textContent = hoverBgcolorInput.value
 	isHoverBGChange = true
 	visibleHoverBlockOutput()
-}
-hoverTransitionInput.onchange = () =>{
+})
+hoverTransitionInput.addEventListener('change', () =>{
 	hoverTransitionInput.value.length > 0 ? hoverTransitionBlock.classList.remove('disabled') : hoverTransitionBlock.classList.add('disabled')
 	hoverTransition.textContent = hoverTransitionInput.value
 	buttonElement.style.transition = `${hoverTransitionInput.value}s all ${hoverTransitionTimming.value}`
-}
-hoverTransitionTimming.onchange = () =>{
+})
+hoverTransitionTimming.addEventListener ('change', () =>{
 	hoverTransitionTime.textContent = hoverTransitionTimming.value
 	buttonElement.style.transition = `${hoverTransitionInput.value}s all ${hoverTransitionTimming.value}`
-}
-hoverTextColorInput.onchange = () =>{
+})
+hoverTextColorInput.addEventListener('change', () =>{
 	hoverTextColorInput.value.length > 0 ? hoverColorBlock.classList.remove('disabled') : hoverColorBlock.classList.add('disabled')
 	hoverFontColor.textContent = hoverTextColorInput.value
 	visibleHoverBlockOutput()
 	isHoverTextColorChange = true
-}
-hoverFontSizeInput.onchange = () =>{
+})
+hoverFontSizeInput.addEventListener('change', () =>{
 	hoverFontSizeInput.value.length > 0 ? hoverFontsizeBlock.classList.remove('disabled') : hoverFontsizeBlock.classList.add('disabled')
 	hoverFontSize.textContent = hoverFontSizeInput.value
 	visibleHoverBlockOutput()
-}
+})
 const hoverShadowsArray = []
-hoverShadowsSettings.onchange = () =>{
+hoverShadowsSettings.addEventListener('change', () =>{
 	hoverShadowBlock.textContent.length > 0 ? hoverShadowBlock.classList.remove('disabled') : hoverShadowBlock.classList.add('disabled')
 	if (hoverShadowInset.checked === true) {	
 		hoverShadowsArray[0] = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value} inset`
@@ -656,19 +616,19 @@ hoverShadowsSettings.onchange = () =>{
 		hoverBoxShadow.textContent = `${hoverShadowX.value}px ${hoverShadowY.value}px ${hoverShadowBlur.value}px ${hoverShadowSpread.value}px ${hoverShadowColor.value}`
 	}
 	visibleHoverBlockOutput()
-}
-transformScaleInput.onchange = () =>{
+})
+transformScaleInput.addEventListener('change', () =>{
 	transformScaleInput.value.length > 0 ? hoverTransformBlock.classList.remove('disabled') : hoverTransformBlock.classList.add('disabled')
 	hoverTransform.textContent = transformScaleInput.value
 	visibleHoverBlockOutput()
-}
+})
 
 
-hoverToggle.onchange = () =>{
+hoverToggle.addEventListener('change', () =>{
 	hoverToggle.checked ? hoverSection.classList.add('active') : hoverSection.classList.remove('active')
 	//hoverToggle.checked ? true : hoverClass.style.display = 'none'
 }
-
+)
 
 /*Сброс ховера*/
 const hoverResetBtn = document.querySelector('.hover-reset')
@@ -688,9 +648,9 @@ const hoverValuesReset = () =>{
 	hoverShadowInset.checked = false
 	hoverShadowsArray[0] = ''
 }
-hoverResetBtn.onclick = () =>{
+hoverResetBtn.addEventListener('click', () =>{
 	hoverValuesReset()
-}
+})
 	let normalScale = 1
 /*Классы состояния кнопки*/
 
