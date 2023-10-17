@@ -1,7 +1,7 @@
 import * as webpCheck from "./modules/webpcheck.js"
 webpCheck.isWebp()
 import {fonts} from "./modules/fonts/fontsFamily.js"
-
+import {fontSizeChange,fontWeightChange,buttonTextChange,textColorChange} from "./modules/fonts/fontSettings.js"
 
 const elementBg = document.querySelector('.element__section')
 const buttonElement = document.querySelector('.element__element')
@@ -31,21 +31,17 @@ colorInput.onchange = () => {
 }
 
 /*TEXT & FONT SIZE*/
-const settingsText = document.querySelector('.settings__text')
+
 const settingsTextInput = document.querySelector('.settings__text-input')
 const textFontSizeInput = document.querySelector('.text__fontsize-input')
 const textColorInput = document.querySelector('.text__color-input')
-const textColorOutput = document.querySelector('.text__color-output')
-const textColor = document.querySelector('.text-color')
-const textBlock = document.querySelector('.text-block')
-const btnFontSize = document.querySelector('.btn__font-size')
-const btnFontColor = document.querySelector('.btn__font-color')
+
 const fontSelect = document.querySelector('#fontfamily')
 const btnFontFamily = document.querySelector('.btn__font-family')
 const textFontFamily = document.querySelector('.text-fontfamily')
 const weightSelect = document.querySelector('#fontweight')
 const btnFontWeight = document.querySelector('.btn__font-weight')
-const textFontWeight = document.querySelector('.text-fontweight')
+
 
 
 /*font-family*/
@@ -117,28 +113,21 @@ fontSelect.onchange = () =>{
 
 /*font-size*/
 textFontSizeInput.addEventListener('change', () =>{
-	textBlock.classList.remove('disabled')
-	buttonElement.style.fontSize = `${textFontSizeInput.value}px`
-	btnFontSize.textContent = textFontSizeInput.value
+	fontSizeChange(buttonElement)
 })
 /*font-wieght*/
 weightSelect.addEventListener('change', () =>{
-	textFontWeight.classList.remove('disabled')
-	buttonElement.style.fontWeight = weightSelect.value
-	btnFontWeight.textContent = weightSelect.value
+	fontWeightChange(buttonElement)
 })
 
 /*button text*/
 settingsTextInput.addEventListener('change', () => {
-	buttonElement.textContent = settingsTextInput.value
+	buttonTextChange(buttonElement)
 })
 
 /*text color*/
 textColorInput.addEventListener('change', () => {
-	textColor.classList.remove('disabled')
-	buttonElement.style.color = textColorInput.value
-	textColorOutput.value = textColorInput.value
-	btnFontColor.textContent = textColorInput.value
+	textColorChange(buttonElement)
 })
 /*button color*/
 
