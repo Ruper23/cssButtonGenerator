@@ -188,21 +188,17 @@ const borderRadiusBlock = document.querySelector('.border-radius')
 const btnBorderColor = document.querySelector('.btn__border-color')
 const borderBlock = document.querySelector('.border-block')
 let borderTypeSelected
-const borderTypeChange = () => {
-	if (borderTypes[0].checked) { borderTypeSelected = borderTypes[0].value }
-	if (borderTypes[1].checked) { borderTypeSelected = borderTypes[1].value }
-	if (borderTypes[2].checked) { borderTypeSelected = borderTypes[2].value }
-	if (borderTypes[3].checked) { borderTypeSelected = borderTypes[3].value }
 
-}
-/*borderTypesBlock.onchange = () =>{
-		for(borderType of borderTypes){
+const borderTypeChange = () => {
+	let borderType
+	for(borderType of borderTypes){
 		if(borderType.checked){
 			borderTypeSelected = borderType.value
 			break
 		}
 	}
-}*/
+}
+
 const borderRadiusChange = () => {
 	if (borderRadius.value == "0" || borderRadius.value == '') {
 		borderRadiusBlock.style.display = 'none'

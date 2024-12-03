@@ -19,7 +19,7 @@ export function fontSizeChange(buttonElement) {
 }
 /*font-wieght*/
 export function fontWeightChange(buttonElement) {
-	textFontWeight.classList.remove('disabled')
+	weightSelect.classList.remove('disabled')
 	buttonElement.style.fontWeight = weightSelect.value
 	btnFontWeight.textContent = weightSelect.value
 }
